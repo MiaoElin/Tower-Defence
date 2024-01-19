@@ -27,6 +27,9 @@ public class ClientMain : MonoBehaviour {
             UIApp.Login_Close(mainContext.uIcon);
             GameBusiness.EnterGame(mainContext.gameCon);
         };
+        uIEventCenter.Login_OnClickSettingHandle+=()=>{
+            UIApp.Setting_Open(mainContext.uIcon);
+        };
     }
     // Update is called once per frame
     void Update() {

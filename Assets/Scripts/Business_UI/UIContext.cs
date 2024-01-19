@@ -5,7 +5,6 @@ public class UIcontext {
     public Panel_Setting panel_Setting;
     public Canvas canvas;
     public AssetsContext assetsContext;
-    // public UIEventCenter UIEventCenter=>uIEventCenter;
     UIEventCenter uIEventCenter;
     public UIEventCenter UIEventCenter => uIEventCenter;
 

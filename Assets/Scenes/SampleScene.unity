@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel_Login: {fileID: 4814765207797167176, guid: 9e04f042717cb874096ed3c4e08b44cb, type: 3}
-  panel_Setting: {fileID: 7940716204807526043, guid: 39aba1f3f041a734e9262d8e636ea119, type: 3}
+  panel_Setting: {fileID: 4451491421719926349, guid: e60a88429768f6d4c83f70b95cac2d1d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
