@@ -1,19 +1,22 @@
 using System;
 using UnityEngine;
-public static class UIApp{
-    public static void Login_Open(UIcontext con,Action OnClicStartkHandle){
-        Panel_Login panel=con.panel_Login;
-        if(panel==null){
+using UnityEngine.EventSystems;
+public static class UIApp {
+    public static void Login_Open(UIcontext con) {
+        Panel_Login panel = con.panel_Login;
+        if (panel == null) {
+            panel = GameObject.Instantiate(con.assetsContext.panel_Login, con.canvas.transform);
             panel.Ctor();
-            panel.OnClicStartkHandle=OnClicStartkHandle;
-            panel=GameObject.Instantiate(con.panel_Login,con.canvas.transform);
-            con.panel_Login=panel;
+            panel.OnClickStartkHandle = () => { con.UIEventCenter.Login_Start(); };
+            panel.OnClickExitHandle = () => { con.UIEventCenter.Login_Exit(); };
+            con.panel_Login = panel;
         }
         panel.Show();
+        EventSystem.current.SetSelectedGameObject(panel.btn_Star.gameObject);
     }
-    public static void Login_Close(UIcontext con){
-        Panel_Login panel=con.panel_Login;
-        if(panel!=null){
+    public static void Login_Close(UIcontext con) {
+        Panel_Login panel = con.panel_Login;
+        if (panel != null) {
             panel.Close();
         }
     }

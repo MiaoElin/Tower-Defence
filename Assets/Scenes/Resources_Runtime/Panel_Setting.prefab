@@ -249,9 +249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4027a6e674481f84ebfe6908eb77f855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btn_Music: {fileID: 0}
-  btn_KeySet: {fileID: 0}
-  btn_Language: {fileID: 0}
+  btn_Music: {fileID: 3383154892224806350}
+  btn_KeySet: {fileID: 2712980309721008509}
+  btn_Language: {fileID: 9027147672471779280}
 --- !u!1 &6961274908406943737
 GameObject:
   m_ObjectHideFlags: 0
