@@ -30,6 +30,9 @@ public class ClientMain : MonoBehaviour {
         uIEventCenter.Login_OnClickSettingHandle+=()=>{
             UIApp.Setting_Open(mainContext.uIcon);
         };
+        uIEventCenter.Setting_OnClickCloseHandle+=()=>{
+            UIApp.Setting_Close(mainContext.uIcon);
+        };
     }
     // Update is called once per frame
     void Update() {
