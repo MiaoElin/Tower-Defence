@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 49870730086270433}
   - component: {fileID: 4814765207797167176}
   m_Layer: 5
-  m_Name: Login_Panel
+  m_Name: Panel_Login
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

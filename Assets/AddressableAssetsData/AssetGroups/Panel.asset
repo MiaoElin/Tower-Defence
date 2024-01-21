@@ -12,11 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
   m_Name: Panel
   m_EditorClassIdentifier: 
-  m_GroupName: Packed Assets
+  m_GroupName: Panel
   m_Data:
     m_SerializedData: []
   m_GUID: b3d5caa0e3e80744581e4c8609c46530
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: e60a88429768f6d4c83f70b95cac2d1d
+    m_Address: Panel_Setting
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Panel
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e04f042717cb874096ed3c4e08b44cb
+    m_Address: Login_Panel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Panel
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 99c48106b7df5c24082eec72495addf8, type: 2}
   m_SchemaSet:

@@ -7,7 +7,7 @@ public static class UIFactory {
             Debug.LogError($"UIFactory.CreatePanel:{str}not found");
             return default;
         }
-        return GameObject.Instantiate(tm,con.canvas.transform).GetComponent<T>();
+        return GameObject.Instantiate(tm,con.panelCanvas.transform).GetComponent<T>();
         
     }
     public static Panel_Login P_Login_Create(UIcontext con){

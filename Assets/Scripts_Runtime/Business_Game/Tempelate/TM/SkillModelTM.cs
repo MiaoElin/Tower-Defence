@@ -1,5 +1,5 @@
 using UnityEngine;
-[CreateAssetMenu(fileName = "SkillModelTM_", menuName = "TM/SkillModelTM", order = 0)]
+[CreateAssetMenu(fileName = "SkillModelTM_S", menuName = "TM/SkillModelTM", order = 0)]
 public class SkillModelTM : ScriptableObject {
     public int typeID;
     public int SkillLevel;

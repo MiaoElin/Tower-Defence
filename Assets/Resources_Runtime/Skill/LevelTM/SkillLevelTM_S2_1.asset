@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a420bbafc23f14045b562a02f49d1196, type: 3}
-  m_Name: SkillModelTM_1
+  m_Script: {fileID: 11500000, guid: 3b739ac524bd1d34f89436ffd468f76d, type: 3}
+  m_Name: SkillLevelTM_S2_1
   m_EditorClassIdentifier: 
-  typeID: 1
-  SkillLevel: 1
-  skillType: 0
-  skillLevelTMs:
-  - {fileID: 11400000, guid: 664dc1f71b317464191362b18b8a1725, type: 2}
+  skillTypeID: 0
+  id: 0
+  sprite: {fileID: 0}
+  cdMax: 0
+  maintain: 0
+  interval: 0

@@ -3,7 +3,7 @@ using UnityEngine;
 public class UIcontext {
     public Panel_Login panel_Login;//不要new 在Login_Open 通过预制件生成，预制件在ASsetContext里
     public Panel_Setting panel_Setting;
-    public Canvas canvas;
+    public Canvas panelCanvas;
     public AssetsContext assetsContext;
     UIEventCenter uIEventCenter;
     public UIEventCenter UIEventCenter => uIEventCenter;
@@ -16,7 +16,7 @@ public class UIcontext {
         uIEventCenter = new UIEventCenter();
     }
     public void Inject(Canvas canvas, AssetsContext assetsContext) {
-        this.canvas = canvas;
+        this.panelCanvas = canvas;
         this.assetsContext = assetsContext;
     }
 }

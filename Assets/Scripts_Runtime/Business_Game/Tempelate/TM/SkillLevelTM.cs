@@ -1,8 +1,8 @@
 using UnityEngine;
-[CreateAssetMenu(fileName ="SkillLevelTM_",menuName ="TM/SkillLevelTM")]
+[CreateAssetMenu(fileName ="SkillLevelTM_S_",menuName ="TM/SkillLevelTM")]
 public class SkillLevelTM:ScriptableObject{
-    public int typeID;
-    public int skillLevel;
+    public int skillTypeID;
+    public int id;
     public Sprite sprite;
     public float cdMax;
     public float maintain;

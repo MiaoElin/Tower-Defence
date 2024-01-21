@@ -1,9 +1,11 @@
+using UnityEngine;
 public class GameContext{
-    public TempelateContext tempCon;
-    
+    public TempelateRepo tempCon;
+    public AssetsContext assets;
     public GameContext(){
     }
-    public void Inject(TempelateContext tempCon){
+    public void Inject(TempelateRepo tempCon,AssetsContext assets){
         this.tempCon=tempCon;
+        this.assets=assets;
     }
 }

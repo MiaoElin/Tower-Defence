@@ -50,6 +50,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: db4d480327b432a40aa1263b49309bb0, type: 2}
   - {fileID: 11400000, guid: 4a2f84eb2272c07419d395b4abda12c4, type: 2}
   - {fileID: 11400000, guid: c6182b719905adc4b944fe7466c0ec39, type: 2}
+  - {fileID: 11400000, guid: 5ff18f873f7d6044880079a8851b10ba, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -94,6 +95,8 @@ MonoBehaviour:
     - TowerTM
     - SkillLevelTM
     - SkillModelTM
+    - Panel
+    - Entities
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 52b32c1880fc8584495ce126aa200e59, type: 2}

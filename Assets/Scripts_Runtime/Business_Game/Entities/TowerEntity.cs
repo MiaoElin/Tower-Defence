@@ -1,6 +1,6 @@
 using UnityEngine;
 public class TowerEntity:MonoBehaviour{
-    public int entityid;
+    public int entityID;
     public int typeID;
     // ====skill====
     public SkillModelComponent skillModelComponent;
@@ -12,4 +12,5 @@ public class TowerEntity:MonoBehaviour{
     public void TearDown(){
         GameObject.Destroy(gameObject);
     }
+    
 }

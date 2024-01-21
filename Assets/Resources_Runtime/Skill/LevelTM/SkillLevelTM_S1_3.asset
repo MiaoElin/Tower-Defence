@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SkillLevelTM_S1_3
   m_EditorClassIdentifier: 
   typeID: 1
-  skillLevel: 3
+  id: 3
   sprite: {fileID: 4339393334536603291, guid: b26a24691d713de4b99c3b3be23f9615, type: 3}
   cdMax: 1
   maintain: 2

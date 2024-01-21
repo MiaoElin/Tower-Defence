@@ -14,7 +14,7 @@ public class ClientMain : MonoBehaviour {
         // 初始化
         mainContext = new MainContext();
         // 注入 
-        mainContext.Inject(gameObject.GetComponentInChildren<Canvas>(), gameObject.GetComponentInChildren<AssetsContext>());
+        mainContext.Inject(gameObject.GetComponentInChildren<Canvas>());
         // event
         BindEvent();
         // Init
@@ -26,6 +26,7 @@ public class ClientMain : MonoBehaviour {
     }
     void Init() {
         TempelateInfra.LoadAll(mainContext.tempCon);
+        AssetsInfra.LoadAll(mainContext.assetsCon);
     }
     void BindEvent() {
         UIEventCenter uIEventCenter = mainContext.uIcon.UIEventCenter;

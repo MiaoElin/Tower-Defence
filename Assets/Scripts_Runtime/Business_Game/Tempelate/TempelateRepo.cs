@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-public class TempelateContext {
+public class TempelateRepo {
     Dictionary<int, TowerTM> towerTMs;
     Dictionary<int, SkillModelTM> skillModelTMs;
     Dictionary<int, SkillLevelTM> skillLevelTMs;
-    public TempelateContext() {
+    public TempelateRepo() {
         towerTMs = new Dictionary<int, TowerTM>();
         skillModelTMs = new Dictionary<int, SkillModelTM>();
         skillLevelTMs = new Dictionary<int, SkillLevelTM>();
@@ -18,14 +18,14 @@ public class TempelateContext {
     public void Add_SkillModelTM(SkillModelTM tm) {
         skillModelTMs.Add(tm.typeID, tm);
     }
-    public bool Get_SkillModelTM(int typeID, out SkillModelTM tm) {
-        return skillModelTMs.TryGetValue(typeID, out tm);
+    // public bool Get_SkillModelTM(int typeID, out SkillModelTM tm) {
+    //     return skillModelTMs.TryGetValue(typeID, out tm);
 
-    }
+    // }
     public void Add_SkillLevelTM(SkillLevelTM tm) {
-        skillLevelTMs.Add(tm.typeID, tm);
+        skillLevelTMs.Add(tm.id, tm);
     }
-    public bool Get_SkillLevelTM(int typeID, out SkillLevelTM tm) {
-        return skillLevelTMs.TryGetValue(typeID, out tm);
-    }
+    // public bool Get_SkillLevelTM(int id, out SkillLevelTM tm) {
+    //     return skillLevelTMs.TryGetValue(id, out tm);
+    // }
 }
