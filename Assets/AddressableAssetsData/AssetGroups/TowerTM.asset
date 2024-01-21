@@ -10,26 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Default Local Group
+  m_Name: TowerTM
   m_EditorClassIdentifier: 
-  m_GroupName: Default Local Group
+  m_GroupName: TowerTM
   m_Data:
     m_SerializedData: []
-  m_GUID: 0b5dc6a18111a934e9ee6aadd5b99a74
+  m_GUID: bf94ed96631d930458d68d4c4ed8d811
   m_SerializeEntries:
-  - m_GUID: 9e04f042717cb874096ed3c4e08b44cb
-    m_Address: Assets/Resources_Runtime/Panel/Login_Panel.prefab
+  - m_GUID: 1aec032888c42384fa3922aec4e9e1e5
+    m_Address: TowerTM_2
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - TowerTM
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e60a88429768f6d4c83f70b95cac2d1d
-    m_Address: Assets/Resources_Runtime/Panel/Panel_Setting.prefab
+  - m_GUID: 14d166261e0d0c246b476e1b93aa65e1
+    m_Address: TowerTM_1
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - TowerTM
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 99c48106b7df5c24082eec72495addf8, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 79852f19ed3875a49894f5ea20a82b2c, type: 2}
-    - {fileID: 11400000, guid: 07e68079af1aab8489f15d3d891b8cd6, type: 2}
+    - {fileID: 11400000, guid: cc1acca578b6e4f4eb02c828fbd5557f, type: 2}
+    - {fileID: 11400000, guid: 07daa3f77626bfb49b4973fbea746449, type: 2}

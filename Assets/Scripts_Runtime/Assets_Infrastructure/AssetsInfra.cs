@@ -1,1 +1,1 @@
-using System;
+public static class AssetsInfra{}

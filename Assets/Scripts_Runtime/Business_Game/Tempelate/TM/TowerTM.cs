@@ -3,6 +3,6 @@ using UnityEngine;
 public class TowerTM : ScriptableObject {
     public int typeID;
     public int SkillLevel;
-    public SkillModelTM[] skillModelTMs;
+    [Header("Skill ModelTM")]public SkillModelTM[] skillModelTMs;
 
 }

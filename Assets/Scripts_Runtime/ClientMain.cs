@@ -15,11 +15,17 @@ public class ClientMain : MonoBehaviour {
         mainContext = new MainContext();
         // 注入 
         mainContext.Inject(gameObject.GetComponentInChildren<Canvas>(), gameObject.GetComponentInChildren<AssetsContext>());
+        // event
         BindEvent();
+        // Init
+        Init();
         // 开始
         LoginBusiness.Enter(mainContext);
         // Panel_Login panel=GameObject.Instantiate(panel_Login,gameObject.GetComponentInChildren<Canvas>().transform);
 
+    }
+    void Init() {
+        TempelateInfra.LoadAll(mainContext.tempCon);
     }
     void BindEvent() {
         UIEventCenter uIEventCenter = mainContext.uIcon.UIEventCenter;
@@ -27,10 +33,10 @@ public class ClientMain : MonoBehaviour {
             UIApp.Login_Close(mainContext.uIcon);
             GameBusiness.EnterGame(mainContext.gameCon);
         };
-        uIEventCenter.Login_OnClickSettingHandle+=()=>{
+        uIEventCenter.Login_OnClickSettingHandle += () => {
             UIApp.Setting_Open(mainContext.uIcon);
         };
-        uIEventCenter.Setting_OnClickCloseHandle+=()=>{
+        uIEventCenter.Setting_OnClickCloseHandle += () => {
             UIApp.Setting_Close(mainContext.uIcon);
         };
     }

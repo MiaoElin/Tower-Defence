@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce40fbec28679ed40a4f874b535ed4e5, type: 3}
   m_Name: TowerTM_1
   m_EditorClassIdentifier: 
-  typeID: 0
-  SkillLevel: 0
-  skillModelTMs: []
+  typeID: 1
+  SkillLevel: 1
+  skillModelTMs:
+  - {fileID: 11400000, guid: 8d657c0bb3716b14e8b549c8c9940aa2, type: 2}

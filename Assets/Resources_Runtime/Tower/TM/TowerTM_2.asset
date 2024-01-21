@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a420bbafc23f14045b562a02f49d1196, type: 3}
-  m_Name: SkillModelTM_1
+  m_Script: {fileID: 11500000, guid: ce40fbec28679ed40a4f874b535ed4e5, type: 3}
+  m_Name: TowerTM_2
   m_EditorClassIdentifier: 
-  typeID: 0
-  SkillLevel: 0
-  skillType: 0
-  skillLevelTMs: []
+  typeID: 2
+  SkillLevel: 1
+  skillModelTMs:
+  - {fileID: 11400000, guid: 567e4a78bc3578e46bbb3e4f5afec8f4, type: 2}

@@ -5,7 +5,7 @@ public static class UIApp {
     public static void Login_Open(UIcontext uIcon) {
         Panel_Login panel = uIcon.panel_Login;
         if (panel == null) {
-            panel = GameObject.Instantiate(uIcon.assetsContext.panel_Login, uIcon.canvas.transform);
+            panel = UIFactory.P_Login_Create(uIcon);
             panel.Ctor();
             panel.OnClickStartkHandle = () => { uIcon.UIEventCenter.Login_Start(); };
             panel.OnClickExitHandle = () => { uIcon.UIEventCenter.Login_Exit(); };
@@ -26,13 +26,13 @@ public static class UIApp {
     public static void Setting_Open(UIcontext uIcon){
         Panel_Setting panel=uIcon.panel_Setting;
         if(panel==null){
-            panel=GameObject.Instantiate(uIcon.assetsContext.panel_Setting,uIcon.canvas.transform);
-            panel.Ctor();
-            panel.OnCloseClickHandle=()=>{uIcon.UIEventCenter.Setting_Close();};
-            panel.OnKeySetClickHandle=()=>{uIcon.UIEventCenter.Setting_SetKeyBoard();};
-            panel.OnMusicClickHandle=()=>{uIcon.UIEventCenter.Setting_Music();};
-            panel.OnLangueClickHandle=()=>{uIcon.UIEventCenter.Setting_Langue();};
-            uIcon.panel_Setting=panel;
+            // panel=GameObject.Instantiate(uIcon.assetsContext.panel_Setting,uIcon.canvas.transform);
+            // panel.Ctor();
+            // panel.OnCloseClickHandle=()=>{uIcon.UIEventCenter.Setting_Close();};
+            // panel.OnKeySetClickHandle=()=>{uIcon.UIEventCenter.Setting_SetKeyBoard();};
+            // panel.OnMusicClickHandle=()=>{uIcon.UIEventCenter.Setting_Music();};
+            // panel.OnLangueClickHandle=()=>{uIcon.UIEventCenter.Setting_Langue();};
+            // uIcon.panel_Setting=panel;
         }
         panel.Show();
         EventSystem.current.SetSelectedGameObject(panel.btn_Close.gameObject);

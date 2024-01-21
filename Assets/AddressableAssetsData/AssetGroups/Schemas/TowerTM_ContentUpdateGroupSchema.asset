@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce40fbec28679ed40a4f874b535ed4e5, type: 3}
-  m_Name: TowerTM_2
+  m_Script: {fileID: 11500000, guid: 5834b5087d578d24c926ce20cd31e6d6, type: 3}
+  m_Name: TowerTM_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
-  typeID: 0
-  SkillLevel: 0
-  skillModelTMs: []
+  m_Group: {fileID: 11400000, guid: 85e76830ea524c74d8649c8a33762296, type: 2}
+  m_StaticContent: 0

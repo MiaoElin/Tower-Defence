@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 0b5dc6a18111a934e9ee6aadd5b99a74
   m_currentHash:
     serializedVersion: 2
-    Hash: cf00cbfe8cd00f90713aa4f8776ebf33
+    Hash: 00000000000000000000000000000000
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -46,6 +46,10 @@ MonoBehaviour:
   m_GroupAssets:
   - {fileID: 11400000, guid: 7a39f7f4131999d458b1e14996d683cb, type: 2}
   - {fileID: 11400000, guid: 610de0013bb6e984d975c64e68ddb95a, type: 2}
+  - {fileID: 11400000, guid: 85e76830ea524c74d8649c8a33762296, type: 2}
+  - {fileID: 11400000, guid: db4d480327b432a40aa1263b49309bb0, type: 2}
+  - {fileID: 11400000, guid: 4a2f84eb2272c07419d395b4abda12c4, type: 2}
+  - {fileID: 11400000, guid: c6182b719905adc4b944fe7466c0ec39, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -88,6 +92,8 @@ MonoBehaviour:
     m_LabelNames:
     - default
     - TowerTM
+    - SkillLevelTM
+    - SkillModelTM
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 52b32c1880fc8584495ce126aa200e59, type: 2}
