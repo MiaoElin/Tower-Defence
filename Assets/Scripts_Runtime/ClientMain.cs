@@ -31,14 +31,14 @@ public class ClientMain : MonoBehaviour {
     void BindEvent() {
         UIEventCenter uIEventCenter = mainContext.uIcon.UIEventCenter;
         uIEventCenter.Login_OnClickStartHandle += () => {
-            UIApp.Login_Close(mainContext.uIcon);
+            UIApp.P_Login_Close(mainContext.uIcon);
             GameBusiness.EnterGame(mainContext.gameCon);
         };
         uIEventCenter.Login_OnClickSettingHandle += () => {
-            UIApp.Setting_Open(mainContext.uIcon);
+            UIApp.P_Setting_Open(mainContext.uIcon);
         };
         uIEventCenter.Setting_OnClickCloseHandle += () => {
-            UIApp.Setting_Close(mainContext.uIcon);
+            UIApp.P_Setting_Close(mainContext.uIcon);
         };
     }
     // Update is called once per frame

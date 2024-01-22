@@ -16,4 +16,7 @@ public static class UIFactory {
     public static Panel_Setting P_Setting_Create(UIcontext con){
         return PCreate<Panel_Setting>(con);
     }
+    public static Panel_Heart P_Heart_Create(UIcontext con){
+        return PCreate<Panel_Heart>(con);
+    }
 }

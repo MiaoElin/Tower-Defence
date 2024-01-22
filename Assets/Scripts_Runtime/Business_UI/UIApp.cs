@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 public static class UIApp {
-    public static void Login_Open(UIcontext uIcon) {
+    public static void P_Login_Open(UIcontext uIcon) {
         Panel_Login panel = uIcon.panel_Login;
         if (panel == null) {
             panel = UIFactory.P_Login_Create(uIcon);
@@ -13,30 +13,45 @@ public static class UIApp {
             uIcon.panel_Login = panel;
         }
         panel.Show();
-        // EventSystem.current.SetSelectedGameObject(panel.btn_Star.gameObject);
+        EventSystem.current.SetSelectedGameObject(panel.btn_Star.gameObject);
     }
-    public static void Login_Close(UIcontext uIcon) {
+    public static void P_Login_Close(UIcontext uIcon) {
         Panel_Login panel = uIcon.panel_Login;
-        if (panel != null) {
-            panel.Close();
-        }
+        panel.Close();
     }
-    public static void Setting_Open(UIcontext uIcon){
-        Panel_Setting panel=uIcon.panel_Setting;
-        if(panel==null){
-            panel=UIFactory.P_Setting_Create(uIcon);
+    public static void P_Setting_Open(UIcontext uIcon) {
+        Panel_Setting panel = uIcon.panel_Setting;
+        if (panel == null) {
+            panel = UIFactory.P_Setting_Create(uIcon);
             panel.Ctor();
-            panel.OnCloseClickHandle=()=>{uIcon.UIEventCenter.Setting_Close();};
-            panel.OnKeySetClickHandle=()=>{uIcon.UIEventCenter.Setting_SetKeyBoard();};
-            panel.OnMusicClickHandle=()=>{uIcon.UIEventCenter.Setting_Music();};
-            panel.OnLangueClickHandle=()=>{uIcon.UIEventCenter.Setting_Langue();};
-            uIcon.panel_Setting=panel;
+            panel.OnCloseClickHandle = () => { uIcon.UIEventCenter.Setting_Close(); };
+            panel.OnKeySetClickHandle = () => { uIcon.UIEventCenter.Setting_SetKeyBoard(); };
+            panel.OnMusicClickHandle = () => { uIcon.UIEventCenter.Setting_Music(); };
+            panel.OnLangueClickHandle = () => { uIcon.UIEventCenter.Setting_Langue(); };
+            uIcon.panel_Setting = panel;
         }
         panel.Show();
     }
-    public static void Setting_Close(UIcontext uIcon){
-        Panel_Setting panel=uIcon.panel_Setting;
-        if(panel!=null){
+    public static void P_Setting_Close(UIcontext uIcon) {
+        Panel_Setting panel = uIcon.panel_Setting;
+        panel.Close();
+    }
+    public static void P_Heart_Open(UIcontext uiCon, int playerHp) {
+        Panel_Heart panel = uiCon.panel_Heart;
+        if (panel == null) {
+            panel = UIFactory.P_Heart_Create(uiCon);
+            uiCon.panel_Heart=panel;
+        }
+        panel.Init(playerHp);
+        panel.Show();
+    }
+    public static void P_Heart_Update(UIcontext con,int playerHp){
+        Panel_Heart panel=con.panel_Heart;
+        panel.Init(playerHp);
+    }
+    public static void P_Heart_Close(UIcontext con) {
+        Panel_Heart panel = con.panel_Heart;
+        if (panel != null) {
             panel.Close();
         }
     }

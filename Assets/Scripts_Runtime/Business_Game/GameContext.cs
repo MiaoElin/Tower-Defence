@@ -1,17 +1,26 @@
 using UnityEngine;
 public class GameContext{
+    // ===Context===
+    public UIcontext uicon;
     public TempelateContext tempCon;
     public AssetsContext assets;
+    // ===Service===
     public IDService iDService;
+    // ===Repository===
     public TowerRepo towerRepo;
+    // ===Entity===
     public GameEntity gameEntity;
+    public PlayerEntity playerEntity;
+
     public GameContext(){
         iDService=new IDService ();
         towerRepo =new TowerRepo ();
         gameEntity=new GameEntity ();
+        playerEntity=new PlayerEntity ();
     }
-    public void Inject(TempelateContext tempCon,AssetsContext assets){
+    public void Inject(TempelateContext tempCon,AssetsContext assets,UIcontext uicon){
         this.tempCon=tempCon;
         this.assets=assets;
+        this.uicon=uicon;
     }
 }

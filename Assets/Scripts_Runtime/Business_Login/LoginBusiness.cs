@@ -1,6 +1,6 @@
 using UnityEngine;
 public static class LoginBusiness {
     public static void Enter(MainContext con) {
-        UIApp.Login_Open(con.uIcon);
+        UIApp.P_Login_Open(con.uIcon);
     }
 }

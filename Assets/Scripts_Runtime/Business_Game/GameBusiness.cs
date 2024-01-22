@@ -4,6 +4,12 @@ public static class GameBusiness {
         GameEntity game = con.gameEntity;
         // 生成波次
         // 生成我方基地
+        // 玩家初始化
+        PlayerEntity player = con.playerEntity;
+        player.Init(5);
+        // 打开Panel_Heart
+        UIApp.P_Heart_Open(con.uicon,player.hp);
+        // 生成一座塔
         TowerDomain.SpawnTower(con);
         game.status = GameStatus.Ingame;
 
@@ -23,6 +29,8 @@ public static class GameBusiness {
     }
     public static void Ingame_Tick(GameContext con) {
         // 生成tower
+        // 每帧加载Panel_Heart
+        UIApp.P_Heart_Update(con.uicon,con.playerEntity.hp);
     }
     public static void Fixed_Tick() {
         // 
