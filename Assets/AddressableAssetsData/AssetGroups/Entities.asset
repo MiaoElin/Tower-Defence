@@ -12,11 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
   m_Name: Entities
   m_EditorClassIdentifier: 
-  m_GroupName: Packed Assets
+  m_GroupName: Entities
   m_Data:
     m_SerializedData: []
   m_GUID: b1873ca49b5e0c843b1267a0535ae79e
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: f36ab32fa0c95f248b07ca3ac8e0061c
+    m_Address: TowerEntity
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Entities
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 99c48106b7df5c24082eec72495addf8, type: 2}
   m_SchemaSet:

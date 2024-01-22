@@ -21,13 +21,13 @@ MonoBehaviour:
     m_Address: Panel_Setting
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Panel
+    - Panels
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9e04f042717cb874096ed3c4e08b44cb
     m_Address: Login_Panel
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Panel
+    - Panels
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 99c48106b7df5c24082eec72495addf8, type: 2}

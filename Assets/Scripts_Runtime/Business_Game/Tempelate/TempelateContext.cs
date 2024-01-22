@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-public class TempelateRepo {
+public class TempelateContext {
     Dictionary<int, TowerTM> towerTMs;
     Dictionary<int, SkillModelTM> skillModelTMs;
     Dictionary<int, SkillLevelTM> skillLevelTMs;
-    public TempelateRepo() {
+    public TempelateContext() {
         towerTMs = new Dictionary<int, TowerTM>();
         skillModelTMs = new Dictionary<int, SkillModelTM>();
         skillLevelTMs = new Dictionary<int, SkillLevelTM>();

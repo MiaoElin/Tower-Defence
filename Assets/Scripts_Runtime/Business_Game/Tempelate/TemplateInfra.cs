@@ -5,7 +5,7 @@ using System.Collections.Generic;
 // using UnityEngine.ResourceManagement.AsyncOperations;
 // using System.Threading.Tasks;
 public static class TempelateInfra {
-    public static void LoadAll(TempelateRepo tempCon) {
+    public static void LoadAll(TempelateContext tempCon) {
         {
             // AssetLabelReference labelReference = new AssetLabelReference();
             // labelReference.labelString = "TowerTM";

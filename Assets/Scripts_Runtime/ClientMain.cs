@@ -43,5 +43,6 @@ public class ClientMain : MonoBehaviour {
     }
     // Update is called once per frame
     void Update() {
+        GameBusiness.Tick(mainContext.gameCon);
     }
 }

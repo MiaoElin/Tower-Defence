@@ -3,11 +3,11 @@ public class MainContext {
     public AssetsContext assetsCon;
     public GameContext gameCon;
     public UIcontext uIcon;
-    public TempelateRepo tempCon;
+    public TempelateContext tempCon;
     public MainContext() {
         uIcon = new UIcontext();
         gameCon = new GameContext();
-        tempCon=new TempelateRepo ();
+        tempCon=new TempelateContext ();
         assetsCon=new AssetsContext ();
     }
     public void Inject(Canvas canvas) {
