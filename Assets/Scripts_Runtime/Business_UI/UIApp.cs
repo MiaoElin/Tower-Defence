@@ -40,13 +40,13 @@ public static class UIApp {
         Panel_Heart panel = uiCon.panel_Heart;
         if (panel == null) {
             panel = UIFactory.P_Heart_Create(uiCon);
-            uiCon.panel_Heart=panel;
+            uiCon.panel_Heart = panel;
         }
         panel.Init(playerHp);
         panel.Show();
     }
-    public static void P_Heart_Update(UIcontext con,int playerHp){
-        Panel_Heart panel=con.panel_Heart;
+    public static void P_Heart_Update(UIcontext con, int playerHp) {
+        Panel_Heart panel = con.panel_Heart;
         panel.Init(playerHp);
     }
     public static void P_Heart_Close(UIcontext con) {
@@ -55,14 +55,21 @@ public static class UIApp {
             panel.Close();
         }
     }
-    public static void P_BuildTower_Open(UIcontext con,Vector2 towerPos){
-        Panel_BuildTower panel=con.panel_BuildTower;
-        if(panel==null){
-            panel=UIFactory.P_BuildTower_Create(con);
+    public static void P_BuildTower_Open(UIcontext con, TowerEntity tower) {
+        Panel_BuildTower panel = con.panel_BuildTower;
+        if (panel == null) {
+            panel = UIFactory.P_BuildTower_Create(con);
             panel.Ctor();
-            con.panel_BuildTower=panel;
+            con.panel_BuildTower = panel;
         }
-        panel.transform.position=towerPos;
+        panel.transform.position = tower.transform.position;
+        SkillModel current=tower.skillModelComponent.TryGetCurrent();
+        panel.OnClickUpSkillHandle=()=>{con.UIEventCenter.OnClick_UpSkill_Btn(current.SkillLevel);};
         panel.Show();
+    }
+    public static void Panel_BuildTower_Close(UIcontext con) {
+        Panel_BuildTower panel = con.panel_BuildTower;
+        panel.Close();
+
     }
 }

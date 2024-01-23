@@ -44,8 +44,12 @@ public class ClientMain : MonoBehaviour {
         uIEventCenter.Setting_OnClickCloseHandle += () => {
             UIApp.P_Setting_Close(mainContext.uIcon);
         };
-        uIEventCenter.Tower_OnClickHandle += (Vector2 pos) => {
-            UIApp.P_BuildTower_Open(mainContext.uIcon,pos);
+        uIEventCenter.Tower_OnClickHandle += (TowerEntity tower) => {
+            UIApp.P_BuildTower_Open(mainContext.uIcon,tower);
+        };
+        uIEventCenter.Tower_UpskillHandle+=(int skillLevelTM_id)=>{
+            UIApp.Panel_BuildTower_Close(mainContext.uIcon);
+            
         };
     }
     // Update is called once per frame

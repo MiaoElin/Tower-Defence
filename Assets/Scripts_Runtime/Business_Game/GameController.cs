@@ -15,9 +15,8 @@ public static class Gamecontroller {
         player.Init(5);
         // 打开Panel_Heart
         UIApp.P_Heart_Open(con.uicon, player.hp);
-        // 生成一座塔
-        TowerEntity tower1 = TowerDomain.SpawnTower(con, 0, new Vector2(2.35f, -3));
-        TowerEntity tower2 = TowerDomain.SpawnTower(con, 0, new Vector2(4.3f, 2.7f));
+        // 生成塔位点
+        
         game.status = GameStatus.Ingame;
 
     }

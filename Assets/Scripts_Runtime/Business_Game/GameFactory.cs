@@ -1,5 +1,8 @@
 using UnityEngine;
 public static class GameFactory {
+    // public static SkillModel CreateSkillModel(GameContext con,int typeID){
+    //     // bool 
+    // }
     public static TowerEntity CreateTower(GameContext con, IDService iDService, int typeID, Vector2 pos) {
         bool has = con.tempCon.TryGet_TowerTM(typeID, out TowerTM tm);
         if (!has) {
