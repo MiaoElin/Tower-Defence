@@ -10,16 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Entities
+  m_Name: Map
   m_EditorClassIdentifier: 
-  m_GroupName: Entities
+  m_GroupName: Map
   m_Data:
     m_SerializedData: []
-  m_GUID: b1873ca49b5e0c843b1267a0535ae79e
-  m_SerializeEntries: []
+  m_GUID: 64764df28f5b02a4295220cffc48d9fd
+  m_SerializeEntries:
+  - m_GUID: f9f24eccf12823f4aa3c6cff7aa1c47b
+    m_Address: map1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - map
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 99c48106b7df5c24082eec72495addf8, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 36236ef6a777d404b81e59053b360e9d, type: 2}
-    - {fileID: 11400000, guid: 44036d91b2ffa064492ead466bd2cf9d, type: 2}
+    - {fileID: 11400000, guid: a1139b4be3435044eacb80da6e635424, type: 2}
+    - {fileID: 11400000, guid: 8b999748e1f7c564fafcb581558a9ffe, type: 2}

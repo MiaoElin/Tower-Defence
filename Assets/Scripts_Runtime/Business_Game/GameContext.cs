@@ -11,16 +11,18 @@ public class GameContext{
     // ===Entity===
     public GameEntity gameEntity;
     public PlayerEntity playerEntity;
-
+    // ===Cavans===
+    public Canvas gameCanvas;
     public GameContext(){
         iDService=new IDService ();
         towerRepo =new TowerRepo ();
         gameEntity=new GameEntity ();
         playerEntity=new PlayerEntity ();
     }
-    public void Inject(TempelateContext tempCon,AssetsContext assets,UIcontext uicon){
+    public void Inject(TempelateContext tempCon,AssetsContext assets,UIcontext uicon,Canvas gameCanvas){
         this.tempCon=tempCon;
         this.assets=assets;
         this.uicon=uicon;
+        this.gameCanvas=gameCanvas;
     }
 }

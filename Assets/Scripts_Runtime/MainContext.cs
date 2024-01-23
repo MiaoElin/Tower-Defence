@@ -7,11 +7,11 @@ public class MainContext {
     public MainContext() {
         uIcon = new UIcontext();
         gameCon = new GameContext();
-        tempCon=new TempelateContext ();
-        assetsCon=new AssetsContext ();
+        tempCon = new TempelateContext();
+        assetsCon = new AssetsContext();
     }
-    public void Inject(Canvas canvas) {
-        uIcon.Inject(canvas, assetsCon);
-        gameCon.Inject(tempCon,assetsCon,uIcon);
+    public void Inject(Canvas panelCanvas, Canvas gameCanvas) {
+        uIcon.Inject(panelCanvas, assetsCon);
+        gameCon.Inject(tempCon, assetsCon, uIcon, gameCanvas);
     }
 }

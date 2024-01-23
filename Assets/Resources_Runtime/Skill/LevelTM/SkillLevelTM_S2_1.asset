@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b739ac524bd1d34f89436ffd468f76d, type: 3}
   m_Name: SkillLevelTM_S2_1
   m_EditorClassIdentifier: 
-  skillTypeID: 0
-  id: 0
+  skillTypeID: 2
+  id: 4
   sprite: {fileID: 0}
   cdMax: 0
   maintain: 0

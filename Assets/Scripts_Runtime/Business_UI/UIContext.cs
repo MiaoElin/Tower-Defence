@@ -15,8 +15,8 @@ public class UIcontext {
     public UIcontext() {
         uIEventCenter = new UIEventCenter();
     }
-    public void Inject(Canvas canvas, AssetsContext assetsContext) {
-        this.panelCanvas = canvas;
+    public void Inject(Canvas panelCanvas, AssetsContext assetsContext) {
+        this.panelCanvas = panelCanvas;
         this.assetsContext = assetsContext;
     }
 }

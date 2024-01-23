@@ -8,6 +8,7 @@ public class UIEventCenter {
     public event Action Setting_OnClickMusicHandle;
     public event Action Setting_OnClickSetBoardHandle;
     public event Action Setting_OnClickLangueHandle;
+    public event Action Tower_OnClickHandle;
     public UIEventCenter() {
 
     }
@@ -21,4 +22,5 @@ public class UIEventCenter {
     public void Setting_SetKeyBoard() => Setting_OnClickSetBoardHandle();
     public void Setting_Music() => Setting_OnClickMusicHandle();
     public void Setting_Langue()=>Setting_OnClickLangueHandle();
+    public void OnClick_Tower()=>Tower_OnClickHandle();
 }

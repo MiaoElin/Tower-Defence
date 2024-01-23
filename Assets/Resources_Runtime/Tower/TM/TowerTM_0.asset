@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b739ac524bd1d34f89436ffd468f76d, type: 3}
-  m_Name: SkillLevelTM_S1_2
+  m_Script: {fileID: 11500000, guid: ce40fbec28679ed40a4f874b535ed4e5, type: 3}
+  m_Name: TowerTM_0
   m_EditorClassIdentifier: 
-  skillTypeID: 1
-  id: 2
-  sprite: {fileID: -602911296872151250, guid: 6872b9a4ea8627b46b10900d768d1b4c, type: 3}
-  cdMax: 1
-  maintain: 2
-  interval: 0.2
+  typeID: 0
+  SkillLevel: 0
+  skillModelTMs: []

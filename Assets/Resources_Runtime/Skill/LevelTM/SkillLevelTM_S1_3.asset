@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b739ac524bd1d34f89436ffd468f76d, type: 3}
   m_Name: SkillLevelTM_S1_3
   m_EditorClassIdentifier: 
-  typeID: 1
+  skillTypeID: 1
   id: 3
   sprite: {fileID: 4339393334536603291, guid: b26a24691d713de4b99c3b3be23f9615, type: 3}
   cdMax: 1

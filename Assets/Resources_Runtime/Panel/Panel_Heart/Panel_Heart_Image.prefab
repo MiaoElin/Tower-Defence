@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4377633273684233754}
   - component: {fileID: 6660890514112465248}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Panel_Heart_Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

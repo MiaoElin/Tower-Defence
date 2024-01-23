@@ -16,7 +16,25 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 0b5dc6a18111a934e9ee6aadd5b99a74
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 59d1ce7c7e4ff374b911f412a73931aa
+    m_Address: Assets/Resources_Runtime/Tower/TowerEntity 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Entities
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d705566c99e71640909e9f4c60334da
+    m_Address: Assets/Resources_Runtime/Skill/ModelTM/SkillModelTM_S0.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SkillModelTM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6e8ecbe562edf7e46ae6c6eab44c982b
+    m_Address: Assets/Resources_Runtime/Tower/TM/TowerTM_0.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - TowerTM
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 99c48106b7df5c24082eec72495addf8, type: 2}
   m_SchemaSet:

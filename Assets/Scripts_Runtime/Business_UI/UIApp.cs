@@ -55,4 +55,7 @@ public static class UIApp {
             panel.Close();
         }
     }
+    public static void P_BuildTower_Open(UIcontext con){
+        
+    }
 }
