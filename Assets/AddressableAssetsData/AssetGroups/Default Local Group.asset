@@ -17,8 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 0b5dc6a18111a934e9ee6aadd5b99a74
   m_SerializeEntries:
-  - m_GUID: 59d1ce7c7e4ff374b911f412a73931aa
-    m_Address: Assets/Resources_Runtime/Tower/TowerEntity 1.prefab
+  - m_GUID: a010ff4f4d21d8e4190da4dd11a575e3
+    m_Address: Assets/Resources_Runtime/Tower/TowerEntity.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - Entities
@@ -34,6 +34,24 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - TowerTM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8281eb23dfa855b418857bd3082e2a17
+    m_Address: Assets/Resources_Runtime/map2_0.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - map
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9061130b2301b0b4dbbca9fcb8c6ca2b
+    m_Address: Assets/Resources_Runtime/Skill/LevelTM/SkillLevelTM_S0.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SkillLevelTM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1db63a3ef0b720f439cdb92a912421f2
+    m_Address: Assets/Resources_Runtime/Panel/Panel_TowerSkill/Panel_BuildTower.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Panels
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 99c48106b7df5c24082eec72495addf8, type: 2}

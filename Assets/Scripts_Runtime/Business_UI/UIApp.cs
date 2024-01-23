@@ -55,7 +55,14 @@ public static class UIApp {
             panel.Close();
         }
     }
-    public static void P_BuildTower_Open(UIcontext con){
-        
+    public static void P_BuildTower_Open(UIcontext con,Vector2 towerPos){
+        Panel_BuildTower panel=con.panel_BuildTower;
+        if(panel==null){
+            panel=UIFactory.P_BuildTower_Create(con);
+            panel.Ctor();
+            con.panel_BuildTower=panel;
+        }
+        panel.transform.position=towerPos;
+        panel.Show();
     }
 }

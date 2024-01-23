@@ -1,11 +1,13 @@
 using UnityEngine;
 public static class TowerDomain {
-    public static void SpawnTower(GameContext con) {
-        TowerEntity tower = GameFactory.CreateTower(con, con.iDService, 1, new Vector2(2f, -3));
+    public static TowerEntity  SpawnTower(GameContext con,int typeID,Vector2 pos) {
+        TowerEntity tower = GameFactory.CreateTower(con, con.iDService, typeID, pos);
         SkillModel currentSkill = tower.skillModelComponent.TryGetCurrent();
         // Debug.Log(currentSkill.sprite);
-        tower.sr.sprite=currentSkill.sprite;
-        tower.OnclickTower=()=>con.uicon.UIEventCenter.OnClick_Tower();
+        tower.sr.sprite = currentSkill.sprite;
+        tower.Ctor();
+        tower.OnclickTower = () => con.uicon.UIEventCenter.OnClick_Tower(tower.transform.position);
         con.towerRepo.Add(tower);
+        return tower;
     }
 }

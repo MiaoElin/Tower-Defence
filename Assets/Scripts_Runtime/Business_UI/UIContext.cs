@@ -1,10 +1,14 @@
 using System;
 using UnityEngine;
 public class UIcontext {
+    // ===Panel===
     public Panel_Login panel_Login;//不要new 在Login_Open 通过预制件生成，预制件在ASsetContext里
     public Panel_Setting panel_Setting;
     public Panel_Heart panel_Heart;
+    public Panel_BuildTower panel_BuildTower;
+    // ======
     public Canvas panelCanvas;
+    public Canvas gameCanvas;
     public AssetsContext assetsContext;
     UIEventCenter uIEventCenter;
     public UIEventCenter UIEventCenter => uIEventCenter;
@@ -15,8 +19,9 @@ public class UIcontext {
     public UIcontext() {
         uIEventCenter = new UIEventCenter();
     }
-    public void Inject(Canvas panelCanvas, AssetsContext assetsContext) {
+    public void Inject(Canvas panelCanvas,Canvas gameCanvas, AssetsContext assetsContext) {
         this.panelCanvas = panelCanvas;
         this.assetsContext = assetsContext;
+        this.gameCanvas=gameCanvas;
     }
 }

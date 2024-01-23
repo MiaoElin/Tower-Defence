@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SkillModelTM_S0
   m_EditorClassIdentifier: 
   typeID: 0
-  SkillLevel: 0
+  SkillLevel: 1
   skillType: 0
-  skillLevelTMs: []
+  skillLevelTMs:
+  - {fileID: 11400000, guid: 9061130b2301b0b4dbbca9fcb8c6ca2b, type: 2}

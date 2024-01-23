@@ -19,6 +19,12 @@ public class TowerEntity : MonoBehaviour {
             OnclickTower.Invoke();
         });
     }
+    public void LookAt(GameObject target) {
+        Vector2 dir = target.transform.position - transform.position;
+        var angel = Mathf.Atan2(dir.x, dir.y) * Mathf.Rad2Deg;// 向量转了多少弧度
+        var trailRotation = Quaternion.AngleAxis(angel, Vector3.back);
+        transform.rotation = trailRotation;
+    }
     public void SetPos(Vector2 pos) {
         transform.position = pos;
     }

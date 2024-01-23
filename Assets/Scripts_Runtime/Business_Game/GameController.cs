@@ -16,7 +16,8 @@ public static class Gamecontroller {
         // 打开Panel_Heart
         UIApp.P_Heart_Open(con.uicon, player.hp);
         // 生成一座塔
-        TowerDomain.SpawnTower(con);
+        TowerEntity tower1 = TowerDomain.SpawnTower(con, 0, new Vector2(2.35f, -3));
+        TowerEntity tower2 = TowerDomain.SpawnTower(con, 0, new Vector2(4.3f, 2.7f));
         game.status = GameStatus.Ingame;
 
     }
@@ -37,6 +38,7 @@ public static class Gamecontroller {
         // 生成tower
         // 每帧加载Panel_Heart
         UIApp.P_Heart_Update(con.uicon, con.playerEntity.hp);
+
     }
     public static void Fixed_Tick() {
         // 

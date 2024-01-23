@@ -11,7 +11,7 @@ public class MainContext {
         assetsCon = new AssetsContext();
     }
     public void Inject(Canvas panelCanvas, Canvas gameCanvas) {
-        uIcon.Inject(panelCanvas, assetsCon);
+        uIcon.Inject(panelCanvas, gameCanvas, assetsCon);
         gameCon.Inject(tempCon, assetsCon, uIcon, gameCanvas);
     }
 }
