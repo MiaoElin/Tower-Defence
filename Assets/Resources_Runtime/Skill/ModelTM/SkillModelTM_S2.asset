@@ -15,4 +15,5 @@ MonoBehaviour:
   typeID: 2
   SkillLevel: 1
   skillType: 1
-  skillLevelTMs: []
+  skillLevelTMs:
+  - {fileID: 11400000, guid: 4b8dd7c5c4297554da9b984fec17081b, type: 2}

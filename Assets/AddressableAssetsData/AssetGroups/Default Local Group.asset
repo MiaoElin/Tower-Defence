@@ -35,28 +35,23 @@ MonoBehaviour:
     m_SerializedLabels:
     - TowerTM
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8281eb23dfa855b418857bd3082e2a17
-    m_Address: Assets/Resources_Runtime/map2_0.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - map
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9061130b2301b0b4dbbca9fcb8c6ca2b
     m_Address: Assets/Resources_Runtime/Skill/LevelTM/SkillLevelTM_S0.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - SkillLevelTM
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1db63a3ef0b720f439cdb92a912421f2
-    m_Address: Assets/Resources_Runtime/Panel/Panel_TowerSkill/Panel_BuildTower.prefab
+  - m_GUID: 7670038d05c2f7b428cca7f8cd74dfbd
+    m_Address: Assets/Resources_Runtime/Panel/Panel_BuildTower.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - Panels
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: aa0f91cf277ce3540bc71810365fdde1
-    m_Address: Assets/Resources_Runtime/TowerSite.prefab
+  - m_GUID: 046224152f9357f43b0a570948b0e5a9
+    m_Address: Assets/Resources_Runtime/map/map1_0.prefab
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - map
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f442ca9c1df8cb642801516a0bc23eb0
     m_Address: Assets/Resources_Runtime/SiteEntity.prefab

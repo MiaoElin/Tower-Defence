@@ -10,7 +10,7 @@ public static class GameFactory {
             return default;
         }
         con.assets.TryGet_Entity(typeof(TowerEntity).Name, out GameObject prefab);
-        TowerEntity tower = GameObject.Instantiate(prefab, con.gameCanvas.transform).GetComponent<TowerEntity>();
+        TowerEntity tower = GameObject.Instantiate(prefab).GetComponent<TowerEntity>();
         tower.typeID = typeID;
         tower.entityID = iDService.towerIDRecord++;
         tower.SetPos(pos);

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b26a24691d713de4b99c3b3be23f9615
+guid: a56f93aa8b35b25489fcadff080dc873
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4339393334536603291
-    second: tower_S1_3_0
+      213: -8632869246691277215
+    second: tower_S2_2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,10 +100,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tower_S1_3_0
+      name: tower_S2_2_0
       rect:
         serializedVersion: 2
-        x: 14
+        x: 17
         y: 1
         width: 67
         height: 99
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b9680c52f3f983c30800000000000000
-      internalID: 4339393334536603291
+      spriteID: 1668296b823e13880800000000000000
+      internalID: -8632869246691277215
       vertices: []
       indices: 
       edges: []

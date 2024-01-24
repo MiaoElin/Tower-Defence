@@ -11,7 +11,7 @@ public class UIEventCenter {
     public event Action Tower_UpskillHandle;
     public event Action<SiteEntity> Site_OnClikHandle;
 
-    public event Action<int> BuildTower;
+    public event Action<int,int,Vector2> BuildTower;
     public UIEventCenter() {
 
     }
@@ -29,5 +29,5 @@ public class UIEventCenter {
     public void Onclick_Site(SiteEntity site) => Site_OnClikHandle(site);
 
 
-    public void OnClick_BuildTower(int typeID) => BuildTower(typeID);
+    public void OnClick_BuildTower(int typeID,int siteEntityID,Vector2 towerPos) => BuildTower(typeID,siteEntityID,towerPos);
 }

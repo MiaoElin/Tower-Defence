@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillTypeID: 2
   id: 4
-  sprite: {fileID: 0}
+  sprite: {fileID: -5659346118920462184, guid: 6872b9a4ea8627b46b10900d768d1b4c, type: 3}
   cdMax: 0
   maintain: 0
   interval: 0
