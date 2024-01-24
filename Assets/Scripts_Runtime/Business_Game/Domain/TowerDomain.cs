@@ -6,7 +6,7 @@ public static class TowerDomain {
         // Debug.Log(currentSkill.sprite);
         tower.sr.sprite = currentSkill.sprite;
         tower.Ctor();
-        tower.OnclickTower=()=>{con.uicon.UIEventCenter.OnClick_Tower(tower);};
+        // tower.OnclickTower=()=>
         con.towerRepo.Add(tower);
         return tower;
     }

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 0b5dc6a18111a934e9ee6aadd5b99a74
   m_currentHash:
     serializedVersion: 2
-    Hash: 0ef57bc1bc303496097dcf2b37ca7649
+    Hash: bd390ac6085d0b272fdce0dc2f58a2dc
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
     - Panels
     - Entities
     - map
+    - TowerSite
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 52b32c1880fc8584495ce126aa200e59, type: 2}

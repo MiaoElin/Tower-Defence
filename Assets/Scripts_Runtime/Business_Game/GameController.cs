@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.AddressableAssets;
+using UnityEngine.UI;
 public static class Gamecontroller {
     public static void EnterGame(GameContext con) {
         GameEntity game = con.gameEntity;
@@ -16,7 +17,8 @@ public static class Gamecontroller {
         // 打开Panel_Heart
         UIApp.P_Heart_Open(con.uicon, player.hp);
         // 生成塔位点
-        
+        SiteEntity site1 = GameFactory.CreateSite(con, new Vector2(4.3f, 2.7f));
+        SiteEntity site2 = GameFactory.CreateSite(con, new Vector2(2.35f, -3));
         game.status = GameStatus.Ingame;
 
     }
@@ -37,7 +39,12 @@ public static class Gamecontroller {
         // 生成tower
         // 每帧加载Panel_Heart
         UIApp.P_Heart_Update(con.uicon, con.playerEntity.hp);
-
+        //判断是否点了塔位点
+        int siteLen = con.siteRepo.TakeAll(out SiteEntity[] all_Site);
+        for (int i = 0; i < siteLen; i++) {
+            var site = all_Site[i];
+            site.IsClickSite();
+        }
     }
     public static void Fixed_Tick() {
         // 

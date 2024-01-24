@@ -53,6 +53,17 @@ MonoBehaviour:
     m_SerializedLabels:
     - Panels
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa0f91cf277ce3540bc71810365fdde1
+    m_Address: Assets/Resources_Runtime/TowerSite.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f442ca9c1df8cb642801516a0bc23eb0
+    m_Address: Assets/Resources_Runtime/SiteEntity.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Entities
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 99c48106b7df5c24082eec72495addf8, type: 2}
   m_SchemaSet:

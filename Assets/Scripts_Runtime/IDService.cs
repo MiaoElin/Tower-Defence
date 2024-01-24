@@ -1,12 +1,14 @@
 public class IDService {
-    public int TowerIDRecord;
-    public int RoleIDRecord;
-    public int BulletIDRecord;
+    public int towerIDRecord;
+    public int roleIDRecord;
+    public int bulletIDRecord;
     public int homeIDRecord;
+    public int siteIDRecord;
     public IDService(){
-        TowerIDRecord=0;
-        RoleIDRecord=0;
-        BulletIDRecord=0;
+        towerIDRecord=0;
+        roleIDRecord=0;
+        bulletIDRecord=0;
         homeIDRecord=0;
+        siteIDRecord=0;
     }
 }

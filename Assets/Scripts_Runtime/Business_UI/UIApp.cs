@@ -55,16 +55,20 @@ public static class UIApp {
             panel.Close();
         }
     }
-    public static void P_BuildTower_Open(UIcontext con, TowerEntity tower) {
+    public static void P_BuildTower_Open(UIcontext con, SiteEntity site) {
         Panel_BuildTower panel = con.panel_BuildTower;
         if (panel == null) {
             panel = UIFactory.P_BuildTower_Create(con);
-            panel.Ctor();
+            panel.Ctor(site.id);
+            Debug.Log(site.transform.position);
+            panel.OnClickBuildTower1Handle = (Vector2 sitePos, int siteEntityID) =>{
+                Debug.Log("inin");
+                 con.UIEventCenter.OnClick_BuildTower1(sitePos, siteEntityID);};
+            panel.OnClickBuildTower2Handle = (Vector2 sitePos, int siteEntityID) => con.UIEventCenter.OnClick_BuildTower2(sitePos, siteEntityID);
             con.panel_BuildTower = panel;
         }
-        panel.transform.position = tower.transform.position;
-        SkillModel current=tower.skillModelComponent.TryGetCurrent();
-        panel.OnClickUpSkillHandle=()=>{con.UIEventCenter.OnClick_UpSkill_Btn(current.SkillLevel);};
+        Debug.Log(site.transform.position);
+        panel.transform.position = site.transform.position;
         panel.Show();
     }
     public static void Panel_BuildTower_Close(UIcontext con) {
