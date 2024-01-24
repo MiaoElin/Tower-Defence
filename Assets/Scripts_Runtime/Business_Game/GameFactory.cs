@@ -55,7 +55,7 @@ public static class GameFactory {
             Debug.LogError("找不到siteEntity");
             return default;
         }
-        SiteEntity site = GameObject.Instantiate(sitePrefab, con.gameCanvas.transform).GetComponent<SiteEntity>();
+        SiteEntity site = GameObject.Instantiate(sitePrefab).GetComponent<SiteEntity>();
         site.Ctor();
         site.SetPos(pos);
         site.id = con.iDService.siteIDRecord++;
