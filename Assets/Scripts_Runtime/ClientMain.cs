@@ -44,23 +44,26 @@ public class ClientMain : MonoBehaviour {
         uIEventCenter.Setting_OnClickCloseHandle += () => {
             UIApp.P_Setting_Close(con.uIcon);
         };
-        uIEventCenter.BuildTower1_OnClickHandle += (Vector2 sitePos, int siteEntityID) => {
-            TowerEntity tower = TowerDomain.SpawnTower(con.gameCon, 1, sitePos);
-            UIApp.Panel_BuildTower_Close(con.uIcon);
-            con.gameCon.siteRepo.Remove(siteEntityID);
-        };
-        uIEventCenter.BuildTower2_OnClickHandle += (Vector2 sitePos, int siteEntityID) => {
-            TowerEntity tower = TowerDomain.SpawnTower(con.gameCon, 2, sitePos);
-            UIApp.Panel_BuildTower_Close(con.uIcon);
-            con.gameCon.siteRepo.Remove(siteEntityID);
-        };
-        uIEventCenter.Tower_UpskillHandle += () => {
-            // UIApp.Panel_BuildTower_Close(mainContext.uIcon);
+        // uIEventCenter.BuildTower1_OnClickHandle += (Vector2 sitePos, int siteEntityID) => {
+        //     TowerEntity tower = TowerDomain.SpawnTower(con.gameCon, 1, sitePos);
+        //     UIApp.Panel_BuildTower_Close(con.uIcon);
+        //     con.gameCon.siteRepo.Remove(siteEntityID);
+        // };
+        // uIEventCenter.BuildTower2_OnClickHandle += (Vector2 sitePos, int siteEntityID) => {
+        //     TowerEntity tower = TowerDomain.SpawnTower(con.gameCon, 2, sitePos);
+        //     UIApp.Panel_BuildTower_Close(con.uIcon);
+        //     con.gameCon.siteRepo.Remove(siteEntityID);
+        // };
+        // uIEventCenter.Tower_UpskillHandle += () => {
+        //     // UIApp.Panel_BuildTower_Close(mainContext.uIcon);
 
-        };
+        // };
         uIEventCenter.Site_OnClikHandle += (SiteEntity site) => {
             Debug.Log("bulid tower");
             UIApp.P_BuildTower_Open(con.uIcon, site);
+        };
+        uIEventCenter.BuildTower += () => {
+            Debug.Log("2");
         };
     }
     // Update is called once per frame

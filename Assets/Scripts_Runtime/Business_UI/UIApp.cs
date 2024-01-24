@@ -59,12 +59,9 @@ public static class UIApp {
         Panel_BuildTower panel = con.panel_BuildTower;
         if (panel == null) {
             panel = UIFactory.P_BuildTower_Create(con);
-            panel.Ctor(site.id);
-            panel.OnClickBuildTower1Handle = (Vector2 sitePos, int siteEntityID) => {
-                Debug.Log("inin");
-                con.UIEventCenter.OnClick_BuildTower1(sitePos, siteEntityID);
-            };
-            panel.OnClickBuildTower2Handle = (Vector2 sitePos, int siteEntityID) => con.UIEventCenter.OnClick_BuildTower2(sitePos, siteEntityID);
+            panel.Ctor();
+            // panel.OnClickBuildTower2Handle = (Vector2 sitePos, int siteEntityID) => con.UIEventCenter.OnClick_BuildTower2(sitePos, siteEntityID);
+            panel.OnClickBuildTower1 = () => con.UIEventCenter.OnClick_BuildTower();
             con.panel_BuildTower = panel;
         }
         panel.transform.position = site.transform.position;
