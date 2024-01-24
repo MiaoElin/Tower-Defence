@@ -59,11 +59,11 @@ public class ClientMain : MonoBehaviour {
 
         // };
         uIEventCenter.Site_OnClikHandle += (SiteEntity site) => {
-            Debug.Log("bulid tower");
             UIApp.P_BuildTower_Open(con.uIcon, site);
         };
-        uIEventCenter.BuildTower += () => {
-            Debug.Log("2");
+        uIEventCenter.BuildTower += (int typeID) => {
+            Debug.Log(typeID);
+            TowerDomain.SpawnTower(con.gameCon, typeID, new Vector2(0, 0));
         };
     }
     // Update is called once per frame

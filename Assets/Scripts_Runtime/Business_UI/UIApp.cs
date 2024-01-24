@@ -60,11 +60,11 @@ public static class UIApp {
         if (panel == null) {
             panel = UIFactory.P_BuildTower_Create(con);
             panel.Ctor();
-            // panel.OnClickBuildTower2Handle = (Vector2 sitePos, int siteEntityID) => con.UIEventCenter.OnClick_BuildTower2(sitePos, siteEntityID);
-            panel.OnClickBuildTower1 = () => con.UIEventCenter.OnClick_BuildTower();
+            panel.OnClickBuildTower = (int typeID) => { con.UIEventCenter.OnClick_BuildTower(typeID); };
             con.panel_BuildTower = panel;
         }
-        panel.transform.position = site.transform.position;
+        Vector2 screenPos = Camera.main.WorldToScreenPoint(site.transform.position);
+        panel.transform.position = screenPos;
         panel.Show();
     }
     public static void Panel_BuildTower_Close(UIcontext con) {

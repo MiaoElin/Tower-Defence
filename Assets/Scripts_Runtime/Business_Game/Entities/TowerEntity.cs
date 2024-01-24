@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class TowerEntity : MonoBehaviour {
     public int entityID;
     public int typeID;
+    public int skillLevel;
     public SpriteRenderer sr;
     // ===skill===
     public SkillModelComponent skillModelComponent;

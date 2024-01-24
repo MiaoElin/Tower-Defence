@@ -1,29 +1,21 @@
 using UnityEngine.UI;
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 public class Panel_BuildTower : MonoBehaviour {
     // public int skillLevelTM_id;
-    public Button btn_tower1;
-    public Button btn_tower2;
-    // public Action<Vector2, int> OnClickBuildTower1Handle;
-    // public Action<Vector2, int> OnClickBuildTower2Handle;
-    public Action OnClickBuildTower1;
+    // public panel_BuildTower_Element prefab;
+    public panel_BuildTower_Element btn_1;
+    public panel_BuildTower_Element btn_2;
+    public Action<int> OnClickBuildTower;
     public Panel_BuildTower() {
     }
     public void Ctor() {
-        // Vector2 btnPos = btn_tower1.transform.position;
-        // Vector2 towerScreen = new Vector2(btnPos.x - 1, btnPos.y - 1);
-        // Vector2 towerPos = Camera.main.ScreenToWorldPoint(towerScreen);
-        // btn_tower1.onClick.AddListener(() => {
-            
-        //     OnClickBuildTower1Handle.Invoke(towerPos, siteEntityID);
-        // });
-        // btn_tower2.onClick.AddListener(() => {
-        //     OnClickBuildTower2Handle.Invoke(towerPos, siteEntityID);
-        // });
-        btn_tower1.onClick.AddListener(()=>{
-            Debug.Log("1");
-            OnClickBuildTower1.Invoke();
+        btn_1.btn.onClick.AddListener(() => {
+            OnClickBuildTower.Invoke(btn_1.towerTypeID);
+        });
+        btn_2.btn.onClick.AddListener(() => {
+            OnClickBuildTower.Invoke(btn_2.towerTypeID);
         });
     }
     public void Show() {
