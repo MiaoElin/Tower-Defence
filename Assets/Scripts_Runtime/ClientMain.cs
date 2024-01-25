@@ -7,6 +7,7 @@ public class ClientMain : MonoBehaviour {
     MainContext con;
     public Canvas panelCanvas;
     public Canvas gameCanvas;
+    public Camera mainCamera;
     // Canvas canvas; //在ClientMain下直接挂了Canvas就不用声明了,但是也要拖拽绑定，或者getcomponent
     // AssetsContext assetsContext;//不在ClientMain下挂的话，Getcomponent是拿不到东西的
     void Start() {
@@ -56,6 +57,8 @@ public class ClientMain : MonoBehaviour {
     }
     // Update is called once per frame
     void Update() {
+        // 输入
+        con.input.Process(mainCamera);
         Gamecontroller.Tick(con.gameCon);
 
         // Vector3 mousePos = Input.mousePosition;// 屏幕坐标;

@@ -12,7 +12,7 @@ public static class GameFactory {
         con.assets.TryGet_Entity(typeof(TowerEntity).Name, out GameObject prefab);
         TowerEntity tower = GameObject.Instantiate(prefab).GetComponent<TowerEntity>();
         tower.typeID = typeID;
-        tower.entityID = iDService.towerIDRecord++;
+        tower.id = iDService.towerIDRecord++;
         tower.SetPos(pos);
         SkillModelTM[] skillModelTMs = tm.skillModelTMs;
         foreach (var skillTM in skillModelTMs) {

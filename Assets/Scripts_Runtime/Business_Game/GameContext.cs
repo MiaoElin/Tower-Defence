@@ -1,5 +1,5 @@
 using UnityEngine;
-public class GameContext{
+public class GameContext {
     // ===Context===
     public UIcontext uicon;
     public TempelateContext tempCon;
@@ -12,19 +12,21 @@ public class GameContext{
     // ===Entity===
     public GameEntity gameEntity;
     public PlayerEntity playerEntity;
+    public InputEntity input;
     // ===Cavans===
     public Canvas gameCanvas;
-    public GameContext(){
-        iDService=new IDService ();
-        towerRepo =new TowerRepo ();
-        gameEntity=new GameEntity ();
-        playerEntity=new PlayerEntity ();
-        siteRepo=new SiteRepo ();
+    public GameContext() {
+        iDService = new IDService();
+        towerRepo = new TowerRepo();
+        gameEntity = new GameEntity();
+        playerEntity = new PlayerEntity();
+        siteRepo = new SiteRepo();
     }
-    public void Inject(TempelateContext tempCon,AssetsContext assets,UIcontext uicon,Canvas gameCanvas){
-        this.tempCon=tempCon;
-        this.assets=assets;
-        this.uicon=uicon;
-        this.gameCanvas=gameCanvas;
+    public void Inject(InputEntity input, TempelateContext tempCon, AssetsContext assets, UIcontext uicon, Canvas gameCanvas) {
+        this.input = input;
+        this.tempCon = tempCon;
+        this.assets = assets;
+        this.uicon = uicon;
+        this.gameCanvas = gameCanvas;
     }
 }

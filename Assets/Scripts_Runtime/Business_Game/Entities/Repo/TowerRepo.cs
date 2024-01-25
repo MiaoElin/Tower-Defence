@@ -7,10 +7,10 @@ public class TowerRepo{
         tempAarry=new TowerEntity[100];
     }
     public void Add(TowerEntity tower){
-        all.Add(tower.entityID,tower);
+        all.Add(tower.id,tower);
     }
     public void Remove(TowerEntity tower){
-        all.Remove(tower.entityID);
+        all.Remove(tower.id);
     }
     
 }

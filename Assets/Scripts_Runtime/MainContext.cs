@@ -4,14 +4,16 @@ public class MainContext {
     public GameContext gameCon;
     public UIcontext uIcon;
     public TempelateContext tempCon;
+    public InputEntity input;
     public MainContext() {
         uIcon = new UIcontext();
         gameCon = new GameContext();
         tempCon = new TempelateContext();
         assetsCon = new AssetsContext();
+        input=new InputEntity ();
     }
     public void Inject(Canvas panelCanvas, Canvas gameCanvas) {
         uIcon.Inject(panelCanvas, gameCanvas, assetsCon);
-        gameCon.Inject(tempCon, assetsCon, uIcon, gameCanvas);
+        gameCon.Inject(input,tempCon, assetsCon, uIcon, gameCanvas);
     }
 }
