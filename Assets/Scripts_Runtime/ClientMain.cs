@@ -7,7 +7,7 @@ public class ClientMain : MonoBehaviour {
     MainContext con;
     public Canvas panelCanvas;
     public Canvas gameCanvas;
-    // Canvas canvas; //在ClientMain下直接挂了Canvas就不用声明了
+    // Canvas canvas; //在ClientMain下直接挂了Canvas就不用声明了,但是也要拖拽绑定，或者getcomponent
     // AssetsContext assetsContext;//不在ClientMain下挂的话，Getcomponent是拿不到东西的
     void Start() {
         Debug.Log("hello world");
@@ -17,7 +17,6 @@ public class ClientMain : MonoBehaviour {
         con = new MainContext();
         // 注入 
         // gameObject.GetComponentInChildren<Canvas[]>();
-
         con.Inject(panelCanvas, gameCanvas);
         // event
         BindEvent();
@@ -45,8 +44,8 @@ public class ClientMain : MonoBehaviour {
             UIApp.P_Setting_Close(con.uIcon);
         };
 
-        uIEventCenter.Site_OnClikHandle += (SiteEntity site) => {
-            UIApp.P_BuildTower_Open(con.uIcon, site);
+        uIEventCenter.Site_OnClikHandle += (int siteEntityID, Vector2 sitePos) => {
+            UIApp.P_BuildTower_Open(con.uIcon, siteEntityID, sitePos);
         };
         uIEventCenter.BuildTower += (int typeID, int siteEntityID, Vector2 towerPos) => {
             Debug.Log(typeID);

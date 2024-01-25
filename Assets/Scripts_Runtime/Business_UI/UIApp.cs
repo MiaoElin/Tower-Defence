@@ -55,16 +55,16 @@ public static class UIApp {
             panel.Close();
         }
     }
-    public static void P_BuildTower_Open(UIcontext con, SiteEntity site) {
+    public static void P_BuildTower_Open(UIcontext con, int siteEntityID, Vector2 sitePos) {
         Panel_BuildTower panel = con.panel_BuildTower;
         if (panel == null) {
             panel = UIFactory.P_BuildTower_Create(con);
             panel.Ctor();
             con.panel_BuildTower = panel;
         }
-        Vector2 screenPos = Camera.main.WorldToScreenPoint(site.transform.position);
-        panel.transform.position = screenPos;
-        panel.OnClickBuildTower = (int typeID) => { con.UIEventCenter.OnClick_BuildTower(typeID, site.id, site.transform.position); };
+
+        panel.transform.position = sitePos;
+        panel.OnClickBuildTower = (int typeID) => { con.UIEventCenter.OnClick_BuildTower(typeID, siteEntityID, sitePos); };
         panel.Show();
 
     }

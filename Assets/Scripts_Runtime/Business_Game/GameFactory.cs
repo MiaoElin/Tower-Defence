@@ -59,7 +59,7 @@ public static class GameFactory {
         site.Ctor();
         site.SetPos(pos);
         site.id = con.iDService.siteIDRecord++;
-        site.OnSiteClickHandle = () => { con.uicon.UIEventCenter.Onclick_Site(site); };
+        site.OnSiteClickHandle = () => { con.uicon.UIEventCenter.Onclick_Site(site.id, site.transform.position); };
         con.siteRepo.Add(site);
         return site;
     }

@@ -7,6 +7,10 @@ public static class UIFactory {
             Debug.LogError($"UIFactory.CreatePanel:{str} not found");
             return default;
         }
+        if (str == "Panel_BuildTower") {
+            return GameObject.Instantiate(tm, con.gameCanvas.transform).GetComponent<T>();
+
+        }
         return GameObject.Instantiate(tm, con.panelCanvas.transform).GetComponent<T>();
 
     }
