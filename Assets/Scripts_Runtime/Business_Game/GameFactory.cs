@@ -3,6 +3,35 @@ public static class GameFactory {
     // public static SkillModel CreateSkillModel(GameContext con,int typeID){
     //     // bool 
     // }
+    // public static TowerEntity CreateTower(GameContext con, IDService iDService, int typeID, Vector2 pos) {
+    //     bool has = con.tempCon.TryGet_TowerTM(typeID, out TowerTM tm);
+    //     if (!has) {
+    //         Debug.LogError($"Factory.CreateTower: {typeID} not Found");
+    //         return default;
+    //     }
+    //     con.assets.TryGet_Entity(typeof(TowerEntity).Name, out GameObject prefab);
+    //     TowerEntity tower = GameObject.Instantiate(prefab).GetComponent<TowerEntity>();
+    //     tower.typeID = typeID;
+    //     tower.id = iDService.towerIDRecord++;
+    //     tower.SetPos(pos);
+    //     // SkillModelTM[] skillModelTMs = tm.skillModelTMs;
+    //     // foreach (var skillTM in skillModelTMs) {
+    //     //     SkillModel skill = new SkillModel();
+    //     //     skill.typeID = skillTM.typeID;
+    //     //     skill.SkillLevel = skillTM.SkillLevel;
+    //     //     skill.skillType = skillTM.skillType;
+    //     //     SkillLevelTM levelTM = skillTM.skillLevelTMs[skill.SkillLevel - 1];
+    //     //     skill.cd = 0;
+    //     //     // skill.cdMax = levelTM.cdMax;
+    //     //     // skill.maintain = levelTM.maintain;
+    //     //     // skill.maintainTimer = 0;
+    //     //     // skill.interval = levelTM.interval;
+    //     //     // skill.intervalTimer = 0;
+    //     //     // skill.sprite = levelTM.sprite;
+    //     //     // tower.skillModelComponent.Add(skill);
+    //     }
+    //     return tower;
+    // }
     public static TowerEntity CreateTower(GameContext con, IDService iDService, int typeID, Vector2 pos) {
         bool has = con.tempCon.TryGet_TowerTM(typeID, out TowerTM tm);
         if (!has) {
@@ -14,22 +43,12 @@ public static class GameFactory {
         tower.typeID = typeID;
         tower.id = iDService.towerIDRecord++;
         tower.SetPos(pos);
-        SkillModelTM[] skillModelTMs = tm.skillModelTMs;
-        foreach (var skillTM in skillModelTMs) {
-            SkillModel skill = new SkillModel();
-            skill.typeID = skillTM.typeID;
-            skill.SkillLevel = skillTM.SkillLevel;
-            skill.skillType = skillTM.skillType;
-            SkillLevelTM levelTM = skillTM.skillLevelTMs[skill.SkillLevel - 1];
-            skill.cd = 0;
-            skill.cdMax = levelTM.cdMax;
-            skill.maintain = levelTM.maintain;
-            skill.maintainTimer = 0;
-            skill.interval = levelTM.interval;
-            skill.intervalTimer = 0;
-            skill.sprite = levelTM.sprite;
-            tower.skillModelComponent.Add(skill);
-        }
+        tower.typeName=tm.typeName;
+        tower.price=tm.price;
+        tower.size=tm.size;
+        tower.sr.sprite=tm.sprite;
+        tower.spawnerTMs=tm.spawnerTMs;
+        tower.allowBuildTypeIDs=tm.allowBuildTowers;
         return tower;
     }
     public static void CreateHome() {
@@ -49,18 +68,18 @@ public static class GameFactory {
     //     }
     //     return GameObject.Instantiate(tm, tm.transform).GetComponent<T>();
     // }
-    public static SiteEntity CreateSite(GameContext con, Vector2 pos) {
-        bool has = con.assets.TryGet_Entity("SiteEntity", out GameObject sitePrefab);
-        if (!has) {
-            Debug.LogError("找不到siteEntity");
-            return default;
-        }
-        SiteEntity site = GameObject.Instantiate(sitePrefab).GetComponent<SiteEntity>();
-        site.Ctor();
-        site.SetPos(pos);
-        site.id = con.iDService.siteIDRecord++;
-        site.OnSiteClickHandle = () => { con.uicon.UIEventCenter.Onclick_Site(site.id, site.transform.position); };
-        con.siteRepo.Add(site);
-        return site;
-    }
+    // public static SiteEntity CreateSite(GameContext con, Vector2 pos) {
+    //     bool has = con.assets.TryGet_Entity("SiteEntity", out GameObject sitePrefab);
+    //     if (!has) {
+    //         Debug.LogError("找不到siteEntity");
+    //         return default;
+    //     }
+    //     SiteEntity site = GameObject.Instantiate(sitePrefab).GetComponent<SiteEntity>();
+    //     site.Ctor();
+    //     site.SetPos(pos);
+    //     site.id = con.iDService.siteIDRecord++;
+    //     site.OnSiteClickHandle = () => { con.uicon.UIEventCenter.Onclick_Site(site.id, site.transform.position); };
+    //     con.siteRepo.Add(site);
+    //     return site;
+    // }
 }

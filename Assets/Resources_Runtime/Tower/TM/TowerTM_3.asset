@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce40fbec28679ed40a4f874b535ed4e5, type: 3}
-  m_Name: TowerTM_0
+  m_Name: TowerTM_3
   m_EditorClassIdentifier: 
-  typeID: 0
-  typeName: "\u7A7A\u5730"
-  price: 0
-  size: {x: 1.5, y: 1}
-  sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  spawnerTMs: []
-  allowBuildTowers: 0100000002000000
+  typeID: 3
+  typeName: "\u4E8C\u7EA7\u7BAD\u5854"
+  price: {fileID: 0}
+  size: {x: 2, y: 2}
+  sprite: {fileID: 209101071609244617, guid: 21994e6173b651f46852f2067834ea3e, type: 3}
+  spawnerTMs:
+  - {fileID: 11400000, guid: 68febdb51bd92854787a6029205408bc, type: 2}
+  allowBuildTowers: 

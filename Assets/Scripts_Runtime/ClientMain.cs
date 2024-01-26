@@ -45,14 +45,14 @@ public class ClientMain : MonoBehaviour {
             UIApp.P_Setting_Close(con.uIcon);
         };
 
-        uIEventCenter.Site_OnClikHandle += (int siteEntityID, Vector2 sitePos) => {
-            UIApp.P_BuildTower_Open(con.uIcon, siteEntityID, sitePos);
-        };
-        uIEventCenter.BuildTower += (int typeID, int siteEntityID, Vector2 towerPos) => {
-            Debug.Log(typeID);
-            TowerDomain.SpawnTower(con.gameCon, typeID, towerPos);
+        uIEventCenter.BuildTower += (int newTypeID, int thisTowerEntityID, Vector2 towerPos) => {
+            Debug.Log(newTypeID);
+            TowerDomain.SpawnTower(con.gameCon, newTypeID, towerPos);
+            con.gameCon.towerRepo.TryGet(thisTowerEntityID,out TowerEntity tower);
+            con.gameCon.towerRepo.Remove(tower);
+            GameObject.Destroy(tower.gameObject);
+
             UIApp.Panel_BuildTower_Close(con.uIcon);
-            con.gameCon.siteRepo.Remove(siteEntityID);
         };
     }
     // Update is called once per frame
@@ -60,6 +60,7 @@ public class ClientMain : MonoBehaviour {
         // 输入
         con.input.Process(mainCamera);
         Gamecontroller.Tick(con.gameCon);
+        Debug.Log(con.input.isLeftMouseDown);
 
         // Vector3 mousePos = Input.mousePosition;// 屏幕坐标;
         // // 屏幕坐标转换成世界坐标（点屏幕的时候，在对应的位置的世界坐标里建一座塔

@@ -55,22 +55,33 @@ public static class UIApp {
             panel.Close();
         }
     }
-    public static void P_BuildTower_Open(UIcontext con, int siteEntityID, Vector2 sitePos) {
+    public static void P_BuildTower_Open(UIcontext con, int thisTowerEntityID, Vector2 thisTowerPos, int[] allowBuidTypeID) {
         Panel_BuildTower panel = con.panel_BuildTower;
         if (panel == null) {
             panel = UIFactory.P_BuildTower_Create(con);
             panel.Ctor();
             con.panel_BuildTower = panel;
         }
-
-        panel.transform.position = sitePos;
-        panel.OnClickBuildTower = (int typeID) => { con.UIEventCenter.OnClick_BuildTower(typeID, siteEntityID, sitePos); };
+        // panel.todo 添加可选项
+        if (allowBuidTypeID != null && allowBuidTypeID.Length > 0) {
+            foreach (var typeID in allowBuidTypeID) {
+                con.tempCon.TryGet_TowerTM(typeID, out TowerTM tM);
+                panel.AddOpition(tM.typeID, tM.price, tM.sprite);
+            }
+        }
+        panel.transform.position = thisTowerPos;
+        panel.OnClickBuildTower = (int toBuildTowerTypeID) => { con.UIEventCenter.OnClick_BuildTower(toBuildTowerTypeID, thisTowerEntityID, thisTowerPos); };
         panel.Show();
 
     }
     public static void Panel_BuildTower_Close(UIcontext con) {
         Panel_BuildTower panel = con.panel_BuildTower;
-        panel.Close();
-
+        if (panel != null) {
+            GameObject.Destroy(panel.gameObject); //现在panel==null
+            
+        }
+        if (panel == null) {
+            // Debug.Log("yes");
+        }
     }
 }

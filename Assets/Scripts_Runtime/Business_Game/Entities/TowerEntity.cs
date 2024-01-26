@@ -1,24 +1,36 @@
 using UnityEngine;
 using System;
 using UnityEngine.UI;
+using System.Collections.Generic;
 public class TowerEntity : MonoBehaviour {
     public int id;
     public int typeID;
+    public string typeName;
+    public int price;
+    public Vector2 size;
     public SpriteRenderer sr;
-    // ===skill===
-    public SkillModelComponent skillModelComponent;
+    // ===Spawner===
+    public List<SpawnerTM> spawnerTMs;
     // ===Action===
     public Action OnclickTower;
-    // ===Button===
-    public Button btn_Tower;
+    public int[]allowBuildTypeIDs;
     public TowerEntity() {
-        skillModelComponent = new SkillModelComponent();
     }
     public void Ctor() {
-        btn_Tower.onClick.AddListener(() => {
-            OnclickTower.Invoke();
-        });
+
     }
+    public void IsClickTower() {
+        Vector2 mosePos = Input.mousePosition;
+        Vector2 moseWorldPos = Camera.main.ScreenToWorldPoint(mosePos);
+        Vector2 pos = transform.position;
+        Rect site = new Rect(pos.x - size.x / 2, pos.y - size.y / 2, size.x, size.y);
+        if (site.Contains(moseWorldPos)) {
+            if (Input.GetMouseButton(0)) {
+                OnclickTower.Invoke();
+            }
+        }
+    }
+
     public void LookAt(GameObject target) {
         Vector2 dir = target.transform.position - transform.position;
         var angel = Mathf.Atan2(dir.x, dir.y) * Mathf.Rad2Deg;// 向量转了多少弧度

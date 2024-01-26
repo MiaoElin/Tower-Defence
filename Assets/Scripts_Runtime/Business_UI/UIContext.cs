@@ -6,6 +6,7 @@ public class UIcontext {
     public Panel_Setting panel_Setting;
     public Panel_Heart panel_Heart;
     public Panel_BuildTower panel_BuildTower;
+    public TempelateContext tempCon;
     // ======
     public Canvas panelCanvas;
     public Canvas gameCanvas;
@@ -19,9 +20,10 @@ public class UIcontext {
     public UIcontext() {
         uIEventCenter = new UIEventCenter();
     }
-    public void Inject(Canvas panelCanvas,Canvas gameCanvas, AssetsContext assetsContext) {
+    public void Inject(Canvas panelCanvas,Canvas gameCanvas, AssetsContext assetsContext,TempelateContext tempelateContext) {
         this.panelCanvas = panelCanvas;
         this.assetsContext = assetsContext;
         this.gameCanvas=gameCanvas;
-    }
+        this.tempCon=tempelateContext;
+        }
 }

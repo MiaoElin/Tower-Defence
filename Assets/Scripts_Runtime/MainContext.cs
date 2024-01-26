@@ -13,7 +13,7 @@ public class MainContext {
         input=new InputEntity ();
     }
     public void Inject(Canvas panelCanvas, Canvas gameCanvas) {
-        uIcon.Inject(panelCanvas, gameCanvas, assetsCon);
+        uIcon.Inject(panelCanvas, gameCanvas, assetsCon,tempCon);
         gameCon.Inject(input,tempCon, assetsCon, uIcon, gameCanvas);
     }
 }

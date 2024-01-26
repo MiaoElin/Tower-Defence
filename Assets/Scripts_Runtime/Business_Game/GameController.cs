@@ -17,13 +17,20 @@ public static class Gamecontroller {
         // 打开Panel_Heart
         UIApp.P_Heart_Open(con.uicon, player.hp);
         // 生成塔位点
-        SiteEntity site1 = GameFactory.CreateSite(con, new Vector2(4.3f, 2.7f));
-        SiteEntity site2 = GameFactory.CreateSite(con, new Vector2(2.35f, -3));
-        SiteEntity site3 = GameFactory.CreateSite(con, new Vector2(-9.7f, -0.2f));
-        SiteEntity site4 = GameFactory.CreateSite(con, new Vector2(-9.8f, 5.6f));
-        SiteEntity site5 = GameFactory.CreateSite(con, new Vector2(6f, 8.2f));
-        SiteEntity site6 = GameFactory.CreateSite(con, new Vector2(0.1f, 8.2f));
-        SiteEntity site7 = GameFactory.CreateSite(con, new Vector2(-1.7f, 2.7f));
+        TowerDomain.SpawnTower(con, 0, new Vector2(4.3f, 2.7f));
+        TowerDomain.SpawnTower(con, 0, new Vector2(2.35f, -3));
+        TowerDomain.SpawnTower(con, 0, new Vector2(-9.7f, -0.2f));
+        TowerDomain.SpawnTower(con, 0, new Vector2(-9.8f, 5.6f));
+        TowerDomain.SpawnTower(con, 0, new Vector2(6f, 8.2f));
+        TowerDomain.SpawnTower(con, 0, new Vector2(0.1f, 8.2f));
+        TowerDomain.SpawnTower(con, 0, new Vector2(-1.7f, 2.7f));
+        // SiteEntity site1 = GameFactory.CreateSite(con, new Vector2(4.3f, 2.7f));
+        // SiteEntity site2 = GameFactory.CreateSite(con, new Vector2(2.35f, -3));
+        // SiteEntity site3 = GameFactory.CreateSite(con, new Vector2(-9.7f, -0.2f));
+        // SiteEntity site4 = GameFactory.CreateSite(con, new Vector2(-9.8f, 5.6f));
+        // SiteEntity site5 = GameFactory.CreateSite(con, new Vector2(6f, 8.2f));
+        // SiteEntity site6 = GameFactory.CreateSite(con, new Vector2(0.1f, 8.2f));
+        // SiteEntity site7 = GameFactory.CreateSite(con, new Vector2(-1.7f, 2.7f));
         game.status = GameStatus.Ingame;
 
     }
@@ -45,10 +52,16 @@ public static class Gamecontroller {
         // 每帧加载Panel_Heart
         UIApp.P_Heart_Update(con.uicon, con.playerEntity.hp);
         //判断是否点了塔位点
-        int siteLen = con.siteRepo.TakeAll(out SiteEntity[] all_Site);
-        for (int i = 0; i < siteLen; i++) {
-            var site = all_Site[i];
-            site.IsClickSite();
+        int towerLen = con.towerRepo.TakeAll(out TowerEntity[] all_Tower);
+        for (int i = 0; i < towerLen; i++) {
+            var tower = all_Tower[i];
+            if (FFPhysics.IsPointInsideRect(con.input.worldMousePos, tower.transform.position, tower.size)) {
+                if (con.input.isLeftMouseDown) {
+                    UIApp.Panel_BuildTower_Close(con.uicon);
+                    UIApp.P_BuildTower_Open(con.uicon, tower.id, tower.transform.position, tower.allowBuildTypeIDs);
+                }
+            }
+            // 取消委托，直接可以写做什么
         }
     }
     public static void Fixed_Tick() {

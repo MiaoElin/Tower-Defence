@@ -1,0 +1,14 @@
+using UnityEngine;
+[CreateAssetMenu(fileName = "SpawnerTM_", menuName = "TM/SpawnerTM")]
+public class SpawnerTM : ScriptableObject {
+    public int typeID;
+    public string typeName;
+    public int roleCount;
+    public bool isSpawn;
+    public float cd;
+    public float cdMax;
+    public float maintain;
+    public float maintainTimer;
+    public float interval;
+    public float timer;
+}

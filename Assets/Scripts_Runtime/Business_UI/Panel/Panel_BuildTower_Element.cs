@@ -4,6 +4,8 @@ using System;
 public class panel_BuildTower_Element : MonoBehaviour {
     public int towerTypeID;
     // public int towerSkillLevel;
+    public Text price;
+    public Image icon;
     public Button btn;
     // public Action<int,int> OnClickHandle;
     // public void Ctor(){
@@ -11,4 +13,9 @@ public class panel_BuildTower_Element : MonoBehaviour {
     //         OnClickHandle.Invoke(towerTypeID,towerSkillLevel);
     //     });
     // }
+    public void Ctor(int towerTypeID,int price,Sprite sprite){
+        this.towerTypeID=towerTypeID;
+        this.price.text=price.ToString();
+        this.icon.sprite=sprite;
+    }
 }

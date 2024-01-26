@@ -59,6 +59,23 @@ MonoBehaviour:
     m_SerializedLabels:
     - Entities
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a71c7775a03b4d84aaf3360a236ad3cc
+    m_Address: Assets/Resources_Runtime/Tower/TM/TowerTM_3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - TowerTM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d250eec9b83dfb841b3c61b1d133094c
+    m_Address: Assets/Resources_Runtime/Tower/TM/TowerTM_4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - TowerTM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68febdb51bd92854787a6029205408bc
+    m_Address: Assets/Resources_Runtime/Tower/SpawnerTM/SpawnerTM_3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 99c48106b7df5c24082eec72495addf8, type: 2}
   m_SchemaSet:
