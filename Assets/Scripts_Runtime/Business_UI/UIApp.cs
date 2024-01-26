@@ -68,20 +68,22 @@ public static class UIApp {
                 con.tempCon.TryGet_TowerTM(typeID, out TowerTM tM);
                 panel.AddOpition(tM.typeID, tM.price, tM.sprite);
             }
+            panel.transform.position = thisTowerPos;
+            panel.OnClickBuildTower = (int toBuildTowerTypeID) => { con.UIEventCenter.OnClick_BuildTower(toBuildTowerTypeID, thisTowerEntityID, thisTowerPos); };
+            panel.Show();
         }
-        panel.transform.position = thisTowerPos;
-        panel.OnClickBuildTower = (int toBuildTowerTypeID) => { con.UIEventCenter.OnClick_BuildTower(toBuildTowerTypeID, thisTowerEntityID, thisTowerPos); };
-        panel.Show();
-
     }
     public static void Panel_BuildTower_Close(UIcontext con) {
         Panel_BuildTower panel = con.panel_BuildTower;
         if (panel != null) {
+            Debug.Log(Time.frameCount);
             GameObject.Destroy(panel.gameObject); //现在panel==null
-            
+            // con.panel_BuildTower = null;
+            Debug.Log(Time.frameCount);
         }
         if (panel == null) {
-            // Debug.Log("yes");
+            Debug.Log("yes" + Time.frameCount);
         }
+
     }
 }

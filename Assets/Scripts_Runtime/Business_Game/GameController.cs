@@ -59,6 +59,7 @@ public static class Gamecontroller {
                 if (con.input.isLeftMouseDown) {
                     UIApp.Panel_BuildTower_Close(con.uicon);
                     UIApp.P_BuildTower_Open(con.uicon, tower.id, tower.transform.position, tower.allowBuildTypeIDs);
+                    break;
                 }
             }
             // 取消委托，直接可以写做什么
