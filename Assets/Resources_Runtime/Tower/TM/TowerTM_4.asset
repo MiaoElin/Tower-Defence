@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeID: 4
   typeName: "\u4E8C\u7EA7\u5175\u8425"
-  price: {fileID: 0}
+  price: 120
   size: {x: 2, y: 2}
   sprite: {fileID: -8632869246691277215, guid: a56f93aa8b35b25489fcadff080dc873, type: 3}
   spawnerTMs:

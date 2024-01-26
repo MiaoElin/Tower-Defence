@@ -1,8 +1,11 @@
 using UnityEngine;
+using System.Collections.Generic;
 [CreateAssetMenu(fileName = "SpawnerTM_", menuName = "TM/SpawnerTM")]
 public class SpawnerTM : ScriptableObject {
     public int typeID;
     public string typeName;
+    public Ally ally;
+    public List<Vector2> rolePath;
     public int roleCount;
     public bool isSpawn;
     public float cd;

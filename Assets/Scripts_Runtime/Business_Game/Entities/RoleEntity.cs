@@ -1,7 +1,8 @@
 using UnityEngine;
 public class RoleRntity:MonoBehaviour{
-    public int typeID;
     public int id;
+    public int typeID;
+    public Ally ally;
     public SpriteRenderer sr;
     public float moveSpeed;
     public Vector2[]path;

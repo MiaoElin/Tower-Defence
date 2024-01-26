@@ -15,7 +15,7 @@ MonoBehaviour:
   typeID: 1
   typeName: "\u521D\u7EA7\u7BAD\u5854"
   price: 70
-  size: {x: 1, y: 1}
+  size: {x: 1.5, y: 1}
   sprite: {fileID: -3479695113745559638, guid: e5affd9cfbb020c44b09b3d38bb28597, type: 3}
   spawnerTMs:
   - {fileID: 11400000, guid: 744a710365982e3469d8c9a4f5ec2c21, type: 2}
