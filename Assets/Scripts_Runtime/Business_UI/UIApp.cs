@@ -76,14 +76,13 @@ public static class UIApp {
     public static void Panel_BuildTower_Close(UIcontext con) {
         Panel_BuildTower panel = con.panel_BuildTower;
         if (panel != null) {
-            Debug.Log(Time.frameCount);
             GameObject.Destroy(panel.gameObject); //现在panel==null
             // con.panel_BuildTower = null;
-            Debug.Log(Time.frameCount);
+            // Debug.Log(Time.frameCount);
         }
-        if (panel == null) {
-            Debug.Log("yes" + Time.frameCount);
-        }
+        // if (panel == null) {
+        //     Debug.Log("yes" + Time.frameCount);
+        // }
 
     }
 }

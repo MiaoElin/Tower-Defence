@@ -13,6 +13,9 @@ public class RoleEntity : MonoBehaviour {
     // public void Init(Sprite spr) {
     //     sr.sprite = spr;
     // }
+    public RoleEntity (){
+        skillModelComponent=new SkillModelComponent ();
+    }
     public void SetPos(Vector2 pos) {
         transform.position = pos;
     }

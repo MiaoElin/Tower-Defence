@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeID: 2
   typeName: "\u521D\u7EA7\u5175\u8425"
-  ally: 2
+  ally: 0
   roleTypeID: 2
   rolePath: []
   roleCount: 10

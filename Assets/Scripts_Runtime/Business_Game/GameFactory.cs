@@ -32,7 +32,7 @@ public static class GameFactory {
     //     }
     //     return tower;
     // }
-    public static TowerEntity CreateTower(GameContext con, IDService iDService, int typeID, Vector2 pos) {
+    public static TowerEntity CreateTower(GameContext con, IDService iDService, int typeID, Vector2 pos, Ally ally) {
         bool has = con.tempCon.TryGet_TowerTM(typeID, out TowerTM tm);
         if (!has) {
             Debug.LogError($"Factory.CreateTower: {typeID} not Found");
@@ -47,8 +47,23 @@ public static class GameFactory {
         tower.price = tm.price;
         tower.size = tm.size;
         tower.sr.sprite = tm.sprite;
-        tower.spawnerTMs = tm.spawnerTMs;
         tower.allowBuildTypeIDs = tm.allowBuildTowers;
+        SpawnerTM[] spawnerTMs = tm.spawnerTMs;
+        foreach (var spawnerTM in spawnerTMs) {
+            Spawner spawner = new Spawner();
+            spawner.ally = ally;
+            spawner.isSpawn = true;
+            spawner.roleTypeID=spawnerTM.roleTypeID;
+            spawner.rolePath = spawnerTM.rolePath;
+            spawner.roleCount = spawnerTM.roleCount;
+            spawner.cd = spawnerTM.cd;
+            spawner.cdMax = spawnerTM.cdMax;
+            spawner.maintain = spawnerTM.maintain;
+            spawner.maintainTimer = spawnerTM.maintainTimer;
+            spawner.interval = spawnerTM.interval;
+            spawner.timer = spawnerTM.timer;
+            tower.spawners.Add(spawner);
+        }
         return tower;
     }
     public static void CreateHome() {

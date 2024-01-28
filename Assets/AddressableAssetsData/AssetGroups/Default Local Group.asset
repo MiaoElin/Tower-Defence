@@ -17,47 +17,29 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 0b5dc6a18111a934e9ee6aadd5b99a74
   m_SerializeEntries:
-  - m_GUID: 6e8ecbe562edf7e46ae6c6eab44c982b
-    m_Address: TowerTM_0
+  - m_GUID: 400ab8af4b0c76743ac0b03af8c0620d
+    m_Address: Assets/Resources_Runtime/Skill/ModelTM/SkillModelTM_S2.asset
     m_ReadOnly: 0
     m_SerializedLabels:
-    - TowerTM
+    - SkillModelTM
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a71c7775a03b4d84aaf3360a236ad3cc
-    m_Address: TowerTM_3
+  - m_GUID: 47ff423032c829045a73a85d041ccbe4
+    m_Address: Assets/Resources_Runtime/Skill/LevelTM/SkillLevelTM_S1_1.asset
     m_ReadOnly: 0
     m_SerializedLabels:
-    - TowerTM
+    - SkillLevelTM
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d250eec9b83dfb841b3c61b1d133094c
-    m_Address: TowerTM_4
+  - m_GUID: 62645a4c4daff624aab7687e06bec514
+    m_Address: Assets/Resources_Runtime/Skill/LevelTM/SkillLevelTM_S2_1.asset
     m_ReadOnly: 0
     m_SerializedLabels:
-    - TowerTM
+    - SkillLevelTM
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 68febdb51bd92854787a6029205408bc
-    m_Address: SpawnerTM_3
+  - m_GUID: e721cfd366bb2e947a81e1b55574836b
+    m_Address: Assets/Resources_Runtime/RoleEntity.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
-    - SpawnerTM
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 744a710365982e3469d8c9a4f5ec2c21
-    m_Address: SpawnerTM_1
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - SpawnerTM
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c8940a4b31a2b2643a69a293c2e03c3c
-    m_Address: SpawnerTM_2
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - SpawnerTM
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3fd4091b149dd4f45b5ee069d8f214b4
-    m_Address: SpawnerTM_4
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - SpawnerTM
+    - Entities
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 99c48106b7df5c24082eec72495addf8, type: 2}

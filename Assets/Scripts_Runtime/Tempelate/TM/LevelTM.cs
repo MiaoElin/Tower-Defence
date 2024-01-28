@@ -12,6 +12,6 @@ public class LevelTM : ScriptableObject {
     public List<HomeEntityTM> homeEntities;
     public List<Vector2> sitePos;
     public List<Vector2[]> paths;
-    public List<SpawnerTM> spawnerTMs;
+    public List<Spawner> spawnerTMs;
 
 }

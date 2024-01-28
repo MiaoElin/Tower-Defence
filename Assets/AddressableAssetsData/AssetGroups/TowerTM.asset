@@ -29,6 +29,24 @@ MonoBehaviour:
     m_SerializedLabels:
     - TowerTM
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6e8ecbe562edf7e46ae6c6eab44c982b
+    m_Address: TowerTM_0
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - TowerTM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d250eec9b83dfb841b3c61b1d133094c
+    m_Address: TowerTM_4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - TowerTM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a71c7775a03b4d84aaf3360a236ad3cc
+    m_Address: TowerTM_3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - TowerTM
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 99c48106b7df5c24082eec72495addf8, type: 2}
   m_SchemaSet:

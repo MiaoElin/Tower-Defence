@@ -8,6 +8,6 @@ public class TowerTM : ScriptableObject {
     public int price;
     public Vector2 size;
     public Sprite sprite;
-    public List<SpawnerTM> spawnerTMs;
-    public int[]allowBuildTowers;
+    public SpawnerTM[] spawnerTMs;
+    public int[] allowBuildTowers;
 }

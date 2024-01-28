@@ -47,7 +47,7 @@ public class ClientMain : MonoBehaviour {
 
         uIEventCenter.BuildTower += (int newTypeID, int thisTowerEntityID, Vector2 towerPos) => {
             Debug.Log(newTypeID);
-            TowerDomain.SpawnTower(con.gameCon, newTypeID, towerPos);
+            TowerDomain.SpawnTower(con.gameCon, newTypeID, towerPos,Ally.Player);
             con.gameCon.towerRepo.TryGet(thisTowerEntityID,out TowerEntity tower);
             con.gameCon.towerRepo.Remove(tower);
             GameObject.Destroy(tower.gameObject);
@@ -58,9 +58,9 @@ public class ClientMain : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         // 输入
+        float dt= Time.deltaTime;
         con.input.Process(mainCamera);
-        Gamecontroller.Tick(con.gameCon);
-        Debug.Log(con.input.isLeftMouseDown);
+        Gamecontroller.Tick(con.gameCon,dt);
 
         // Vector3 mousePos = Input.mousePosition;// 屏幕坐标;
         // // 屏幕坐标转换成世界坐标（点屏幕的时候，在对应的位置的世界坐标里建一座塔

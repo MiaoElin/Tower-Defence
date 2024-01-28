@@ -11,7 +11,7 @@ public class LevelEntity : MonoBehaviour {
     public List<HomeEntity> homeEntities;
     public List<Vector2> sitesPos;//塔位点
     public List<Vector2[]> paths;
-    public List<SpawnerTM> spawners;
+    public List<Spawner> spawners;
 
 
 }

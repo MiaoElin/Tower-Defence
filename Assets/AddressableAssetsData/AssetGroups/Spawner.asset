@@ -12,11 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
   m_Name: Spawner
   m_EditorClassIdentifier: 
-  m_GroupName: Packed Assets
+  m_GroupName: Spawner
   m_Data:
     m_SerializedData: []
   m_GUID: 5325ad801ba56e247bcd1bf8de2d5ba6
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 68febdb51bd92854787a6029205408bc
+    m_Address: SpawnerTM_3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpawnerTM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 744a710365982e3469d8c9a4f5ec2c21
+    m_Address: SpawnerTM_1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpawnerTM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c8940a4b31a2b2643a69a293c2e03c3c
+    m_Address: SpawnerTM_2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpawnerTM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3fd4091b149dd4f45b5ee069d8f214b4
+    m_Address: SpawnerTM_4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SpawnerTM
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 99c48106b7df5c24082eec72495addf8, type: 2}
   m_SchemaSet:

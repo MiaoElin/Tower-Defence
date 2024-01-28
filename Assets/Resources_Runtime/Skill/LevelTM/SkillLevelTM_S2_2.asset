@@ -9,19 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ec97a3977842074aa9d062d24dc76a4, type: 3}
-  m_Name: SpawnerTM_3
+  m_Script: {fileID: 11500000, guid: cb825cb467b658d4b9dc938fb332a2f6, type: 3}
+  m_Name: SkillLevelTM_S2_2
   m_EditorClassIdentifier: 
-  typeID: 3
-  typeName: "\u4E8C\u7EA7\u7BAD\u5854"
-  ally: 0
-  roleTypeID: 0
-  rolePath: []
-  roleCount: 1
-  isSpawn: 1
-  cd: 0
-  cdMax: 1
-  maintain: 0.5
-  maintainTimer: 0
+  skillTypeID: 2
+  level: 2
+  bulTypeID: 2
+  id: 4
+  sprite: {fileID: 6261204194188010130, guid: 749b9b1c156e2a044abd62580b0453f9, type: 3}
+  cdMax: 0
+  maintain: 1
   interval: 0.2
-  timer: 0

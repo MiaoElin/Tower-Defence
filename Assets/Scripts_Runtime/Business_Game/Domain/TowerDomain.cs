@@ -1,19 +1,20 @@
 using UnityEngine;
 using System.Collections.Generic;
 public static class TowerDomain {
-    public static TowerEntity SpawnTower(GameContext con, int typeID, Vector2 pos) {
-        TowerEntity tower = GameFactory.CreateTower(con, con.iDService, typeID, pos);
+    public static TowerEntity SpawnTower(GameContext con, int typeID, Vector2 pos,Ally ally) {
+        TowerEntity tower = GameFactory.CreateTower(con, con.iDService, typeID, pos,ally);
         tower.Ctor();
         // tower.OnclickTower=()=>
         con.towerRepo.Add(tower);
         return tower;
     }
     public static void TrySpawnRole(GameContext con, TowerEntity tower, float dt) {
-        List<SpawnerTM> spawnerTMs = tower.spawnerTMs;
-        foreach (var spawner in spawnerTMs) {
-            if (!spawner) {
+        List<Spawner> spawners = tower.spawners;
+        foreach (var spawner in spawners) {
+            if (!spawner.isSpawn) {
                 continue;
             }
+            Debug.Log("inin");
             spawner.cd -= dt;
             if (spawner.cd > 0) {
                 continue;
@@ -30,7 +31,9 @@ public static class TowerDomain {
             }
             spawner.timer = spawner.interval;
             for (int i = 0; i < spawner.roleCount; i++) {
-                RoleDomain.SpawnRole(con, spawner.roleTypeID, spawner.ally, tower.transform.position);
+              RoleEntity role=  RoleDomain.SpawnRole(con, spawner.roleTypeID, spawner.ally, tower.transform.position);
+                tower.allRoles.Add(role.id);
+                spawner.isSpawn=false;
             }
         }
     }
