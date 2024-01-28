@@ -43,19 +43,51 @@ public static class GameFactory {
         tower.typeID = typeID;
         tower.id = iDService.towerIDRecord++;
         tower.SetPos(pos);
-        tower.typeName=tm.typeName;
-        tower.price=tm.price;
-        tower.size=tm.size;
-        tower.sr.sprite=tm.sprite;
-        tower.spawnerTMs=tm.spawnerTMs;
-        tower.allowBuildTypeIDs=tm.allowBuildTowers;
+        tower.typeName = tm.typeName;
+        tower.price = tm.price;
+        tower.size = tm.size;
+        tower.sr.sprite = tm.sprite;
+        tower.spawnerTMs = tm.spawnerTMs;
+        tower.allowBuildTypeIDs = tm.allowBuildTowers;
         return tower;
     }
     public static void CreateHome() {
 
     }
-    public static void CreateRole() {
-
+    public static RoleEntity CreateRole(GameContext con, IDService iDService, int typeID, Ally ally, Vector2 pos) {
+        bool has = con.tempCon.TryGet_RoleTM(typeID, out RoleTM tm);
+        if (!has) {
+            Debug.LogError($"Factory.CreateRole:{typeID} not Found");
+            return default;
+        }
+        con.assets.TryGet_Entity(typeof(RoleEntity).Name, out GameObject prefab);
+        RoleEntity role = GameObject.Instantiate(prefab).GetComponent<RoleEntity>();
+        role.typeID = typeID;
+        role.id = iDService.roleIDRecord++;
+        role.SetPos(pos);
+        role.sr.sprite = tm.sprite;
+        role.moveSpeed = tm.moveSpeed;
+        role.path = tm.path;
+        SkillModelTM[] skillModelTMs = tm.skillModelTMs;
+        foreach (var modeltm in skillModelTMs) {
+            SkillModel skill = new SkillModel();
+            skill.SkillLevel = modeltm.SkillLevel;
+            skill.skillType = modeltm.skillType;
+            SkillLevelTM levelTM = modeltm.skillLevelTMs[skill.SkillLevel - 1];
+            skill.bulTypeID = levelTM.bulTypeID;
+            skill.cd = 0;
+            skill.cdMax = levelTM.cdMax;
+            skill.maintainTimer = 0;
+            skill.maintain = levelTM.maintain;
+            skill.interval = levelTM.interval;
+            skill.intervalTimer = 0;
+            role.skillModelComponent.Add(skill);
+            // skill(有多种技能，那图片该跟随那种技能？
+            // 图片不应该跟随技能，应该跟随技能等级，不同的等级就属于不同的role，图片只要跟role就行？？)
+            // 生成role的时候要给TypeID 和int level 按这两种需求来生成，图片属于技能等级。
+            // 塔升级了，对应塔的兵要怎么原地升级。
+        }
+        return role;
     }
     public static void CreateBullet() {
 

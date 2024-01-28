@@ -17,14 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 1aa5d786b92a9b3479dc695490a51b0d
   m_SerializeEntries:
-  - m_GUID: 8d657c0bb3716b14e8b549c8c9940aa2
-    m_Address: SkillModelTM_1
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - SkillModelTM
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 567e4a78bc3578e46bbb3e4f5afec8f4
-    m_Address: SkillModelTM_2
+  - m_GUID: 6a8403971719bd644ab071ba59c3924a
+    m_Address: SkillModelTM_S
     m_ReadOnly: 0
     m_SerializedLabels:
     - SkillModelTM

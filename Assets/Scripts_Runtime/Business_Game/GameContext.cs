@@ -8,7 +8,7 @@ public class GameContext {
     public IDService iDService;
     // ===Repository===
     public TowerRepo towerRepo;
-    public SiteRepo siteRepo;
+    public RoleRepo roleRepo;
     // ===Entity===
     public GameEntity gameEntity;
     public PlayerEntity playerEntity;
@@ -18,9 +18,10 @@ public class GameContext {
     public GameContext() {
         iDService = new IDService();
         towerRepo = new TowerRepo();
+        roleRepo = new RoleRepo();
         gameEntity = new GameEntity();
         playerEntity = new PlayerEntity();
-        siteRepo = new SiteRepo();
+
     }
     public void Inject(InputEntity input, TempelateContext tempCon, AssetsContext assets, UIcontext uicon, Canvas gameCanvas) {
         this.input = input;

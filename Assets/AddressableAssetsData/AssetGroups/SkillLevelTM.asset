@@ -16,25 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: b83c5220de024d542a923b9c4c403dc8
-  m_SerializeEntries:
-  - m_GUID: 664dc1f71b317464191362b18b8a1725
-    m_Address: SkillLevelTM_S1_1
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - SkillLevelTM
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5d644ba8785946645b974867dbce5583
-    m_Address: SkillLevelTM_S1_3
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - SkillLevelTM
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 13f8a1dece27e6542accba7770906abe
-    m_Address: SkillLevelTM_S1_2
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - SkillLevelTM
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 99c48106b7df5c24082eec72495addf8, type: 2}
   m_SchemaSet:

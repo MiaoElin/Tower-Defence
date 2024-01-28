@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b739ac524bd1d34f89436ffd468f76d, type: 3}
-  m_Name: SkillLevelTM_S0
+  m_Script: {fileID: 11500000, guid: 5834b5087d578d24c926ce20cd31e6d6, type: 3}
+  m_Name: Spawner_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
-  skillTypeID: 0
-  id: 0
-  sprite: {fileID: 0}
-  cdMax: 1
-  maintain: 2
-  interval: 0.2
+  m_Group: {fileID: 11400000, guid: 875c542c4b9b1614a95694cfa5738c7a, type: 2}
+  m_StaticContent: 0

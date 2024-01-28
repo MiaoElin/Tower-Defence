@@ -5,6 +5,7 @@ public class SpawnerTM : ScriptableObject {
     public int typeID;
     public string typeName;
     public Ally ally;
+    public int roleTypeID;
     public List<Vector2> rolePath;
     public int roleCount;
     public bool isSpawn;
