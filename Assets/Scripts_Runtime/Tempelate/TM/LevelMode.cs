@@ -1,14 +1,15 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class LevelEntity : MonoBehaviour {
+using System.Collections.Generic;
+[CreateAssetMenu(fileName = "LevelMode_L_Easy_", menuName = "TM/LevelMode")]
+public class LevelMode : ScriptableObject {
     public int level;
     public Difficulty difficulty;
     public ChallengeMode challengeMode;
     public int playerHp;
-    public Image map;
     public Vector2[] homeEntities;
     public Vector2[] sitesPos;//塔位点
-    public Vector2[]path;
-    public SpawnerComponent spawnerComponent;
+    public Vector2[] path;
+    public SpawnerTM[] spawnerTMs;
+
 }

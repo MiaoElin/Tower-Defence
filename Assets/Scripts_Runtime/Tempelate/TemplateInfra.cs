@@ -23,11 +23,11 @@ public static class TempelateInfra {
             }
         }
         {
-            const string lable = "SkillLevelTM";
-            IList<SkillLevelTM> all = Addressables.LoadAssetsAsync<SkillLevelTM>(lable, null).WaitForCompletion();
-            foreach (var tm in all) {
-                tempCon.Add_SkillLevelTM(tm);
-            }
+            // const string lable = "SkillLevelTM";
+            // IList<SkillLevelTM> all = Addressables.LoadAssetsAsync<SkillLevelTM>(lable, null).WaitForCompletion();
+            // foreach (var tm in all) {
+            //     tempCon.Add_SkillLevelTM(tm);
+            // }
         }
         {
             const string label = "RoleTM";
@@ -42,6 +42,20 @@ public static class TempelateInfra {
             // foreach (var tm in all) {
             //     tempCon.Add_SpawnerTM(tm);
             // }
+        }
+        {
+            const string label = "BulletTM";
+            IList<BulletTM> all = Addressables.LoadAssetsAsync<BulletTM>(label, null).WaitForCompletion();
+            foreach (var tm in all) {
+                tempCon.Add_BulletTM(tm);
+            }
+        }
+        {
+            const string label="LevelTM";
+            IList<LevelTM>all=Addressables.LoadAssetsAsync<LevelTM>(label,null).WaitForCompletion();
+            foreach(var tm in all){
+                
+            }
         }
     }
 }

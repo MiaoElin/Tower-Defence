@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aeeb74321d74d6459628ba986b062d3, type: 3}
-  m_Name: WaveTM_W1
+  m_Script: {fileID: 11500000, guid: 01532a974d29693478fc2606885a4acc, type: 3}
+  m_Name: SkillModelTM_S100
   m_EditorClassIdentifier: 
-  typeID: 1
-  waveSpawnTMs:
-  - {fileID: 11400000, guid: 6cc1a511b3d859b4880233dac3198ea8, type: 2}
-  - {fileID: 11400000, guid: 96305f4c061620d4ea3e13fb05b57089, type: 2}
+  typeID: 100
+  SkillLevel: 1
+  skillType: 2
+  skillLevelTMs:
+  - {fileID: 11400000, guid: adbfeb98c94028840850ba61ce7d159f, type: 2}

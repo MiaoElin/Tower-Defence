@@ -2,15 +2,18 @@ using System.Collections.Generic;
 public class TempelateContext {
     Dictionary<int, TowerTM> towerTMs;
     Dictionary<int, SkillModelTM> skillModelTMs;
-    Dictionary<int, SkillLevelTM> skillLevelTMs;
+    // Dictionary<int, SkillLevelTM> skillLevelTMs;
     Dictionary<int, RoleTM> roleTMs;
-    Dictionary<int,Spawner>spawnerTMs;
+    Dictionary<int, Spawner> spawnerTMs;
+    Dictionary<int, BulletTM> bulletTMs;
+    Dictionary<int, LevelTM> levelTMs;
     public TempelateContext() {
         towerTMs = new Dictionary<int, TowerTM>();
         skillModelTMs = new Dictionary<int, SkillModelTM>();
-        skillLevelTMs = new Dictionary<int, SkillLevelTM>();
-        roleTMs=new Dictionary<int, RoleTM> ();
-        spawnerTMs=new Dictionary<int, Spawner> ();
+        // skillLevelTMs = new Dictionary<int, SkillLevelTM>();
+        roleTMs = new Dictionary<int, RoleTM>();
+        spawnerTMs = new Dictionary<int, Spawner>();
+        bulletTMs = new Dictionary<int, BulletTM>();
     }
     public void Add_TowerTM(TowerTM tm) {
         towerTMs.Add(tm.typeID, tm);
@@ -25,9 +28,9 @@ public class TempelateContext {
     public bool Get_SkillModelTM(int typeID, out SkillModelTM tm) {
         return skillModelTMs.TryGetValue(typeID, out tm);
     }
-    public void Add_SkillLevelTM(SkillLevelTM tm) {
-        skillLevelTMs.Add(tm.id, tm);
-    }
+    // public void Add_SkillLevelTM(SkillLevelTM tm) {
+    //     skillLevelTMs.Add(tm.id, tm);
+    // }
     // public bool Get_SkillLevelTM(int id, out SkillLevelTM tm) {
     //     return skillLevelTMs.TryGetValue(id, out tm);
     // }
@@ -41,4 +44,13 @@ public class TempelateContext {
     //     spawnerTMs.Add(tm.typeID,tm);
     // }
     // public void 
+    public void Add_BulletTM(BulletTM tm) {
+        bulletTMs.Add(tm.typeID, tm);
+    }
+    public void Add_levelTM(LevelTM tm) {
+        levelTMs.Add(tm.level, tm);
+    }
+    public bool TryGet_leveTM(int typeID, out LevelTM levelTM) {
+        return levelTMs.TryGetValue(typeID, out levelTM);
+    }
 }

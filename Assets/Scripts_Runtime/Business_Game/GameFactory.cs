@@ -53,7 +53,7 @@ public static class GameFactory {
             Spawner spawner = new Spawner();
             spawner.ally = ally;
             spawner.isSpawn = true;
-            spawner.roleTypeID=spawnerTM.roleTypeID;
+            spawner.roleTypeID = spawnerTM.roleTypeID;
             spawner.rolePath = spawnerTM.rolePath;
             spawner.roleCount = spawnerTM.roleCount;
             spawner.cd = spawnerTM.cd;
@@ -62,12 +62,13 @@ public static class GameFactory {
             spawner.maintainTimer = spawnerTM.maintainTimer;
             spawner.interval = spawnerTM.interval;
             spawner.timer = spawnerTM.timer;
-            tower.spawners.Add(spawner);
+            tower.spawnerComponent.Add(spawner);
         }
         return tower;
     }
-    public static void CreateHome() {
-
+    public static void CreateHome(GameContext con, Vector2 pos) {
+        HomeEntity home = new HomeEntity();
+        home.SetPos(pos);
     }
     public static RoleEntity CreateRole(GameContext con, IDService iDService, int typeID, Ally ally, Vector2 pos) {
         bool has = con.tempCon.TryGet_RoleTM(typeID, out RoleTM tm);
@@ -106,6 +107,47 @@ public static class GameFactory {
     }
     public static void CreateBullet() {
 
+    }
+    public static LevelEntity CreateLevel(GameContext con, int levelID, Difficulty difficulty, ChallengeMode challengeMode) {
+        bool has = con.tempCon.TryGet_leveTM(levelID, out LevelTM tm);
+        if (!has) {
+            Debug.LogError("GameFactory.CreateLevel not found");
+        }
+        LevelEntity level = new LevelEntity();
+        level.map.sprite = tm.map;
+        LevelMode[] levelModes = tm.levelModes;
+        LevelMode mode = new LevelMode();
+        foreach (var levelMode in levelModes) {
+            if (levelMode.challengeMode == challengeMode) {
+                if (levelMode.difficulty == difficulty) {
+                    mode = levelMode;
+                }
+            }
+        }
+        level.level = levelID;
+        level.difficulty = difficulty;
+        level.challengeMode = challengeMode;
+        level.playerHp = mode.playerHp;
+        level.homeEntities = mode.homeEntities;
+        level.sitesPos = mode.sitesPos;
+        level.path = mode.path;
+        SpawnerTM[] spawnerTMs = mode.spawnerTMs;
+        foreach (var spTM in spawnerTMs) {
+            Spawner spawner = new Spawner();
+            spawner.ally = Ally.Monster;
+            spawner.roleTypeID = spTM.roleTypeID;
+            spawner.rolePath = level.path;
+            spawner.roleCount=spTM.roleCount;
+            spawner.isSpawn=true;
+            spawner.cd = spTM.cd;
+            spawner.cdMax=spTM.cdMax;
+            spawner.maintain=spTM.maintain;
+            spawner.maintainTimer=spTM.maintainTimer;
+            spawner.interval=spTM.interval;
+            spawner.timer=spTM.timer;
+            level.spawnerComponent.Add(spawner);
+        }
+        return level;
     }
     // public static T EntityCreate<T>(GameContext con) where T : MonoBehaviour {
     //     string str = typeof(T).Name;

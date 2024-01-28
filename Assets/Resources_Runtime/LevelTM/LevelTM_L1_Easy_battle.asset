@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63f39734bfab5404abaac8061ad46e1f, type: 3}
+  m_Name: LevelTM_L1_Easy_battle
+  m_EditorClassIdentifier: 
+  level: 1
+  typeID: 1
+  difficulty: 1
+  challengeMode: 1
+  playerHp: 20
+  homeEntities:
+  - {x: -6, y: -9}
+  sitesPos:
+  - {x: 4.3, y: 2.7}
+  - {x: 2.35, y: -3}
+  - {x: -9.7, y: -0.2}
+  - {x: -9.8, y: 5.6}
+  - {x: 6, y: 8.2}
+  - {x: 0.1, y: 8.2}
+  - {x: -1.7, y: 2.7}
+  - {x: 8.7, y: 1.2}
+  - {x: -3.6, y: -8.5}
+  - {x: -10.7, y: -8.5}
+  - {x: 16, y: -4.7}
+  - {x: 16, y: 1.4}
+  path:
+  - {x: -20.5, y: -0.5}
+  - {x: -13.5, y: -0.5}
+  - {x: -13.5, y: 2}
+  - {x: -6, y: 2}
+  - {x: -6, y: 5}
+  - {x: 8.7, y: 5}
+  - {x: 8.7, y: 2.3}
+  - {x: 12.5, y: 2.3}
+  - {x: 12.5, y: -6}
+  - {x: -6, y: -12}
+  spawnerTMs:
+  - {fileID: 11400000, guid: 29d41e459a361c1418e78dfb9f3a0849, type: 2}

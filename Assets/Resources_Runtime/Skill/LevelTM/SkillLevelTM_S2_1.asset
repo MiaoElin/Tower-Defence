@@ -16,7 +16,7 @@ MonoBehaviour:
   level: 1
   bulTypeID: 2
   id: 3
-  sprite: {fileID: 6261204194188010130, guid: 749b9b1c156e2a044abd62580b0453f9, type: 3}
+  sprite: {fileID: 0}
   cdMax: 0
   maintain: 1
   interval: 0.3

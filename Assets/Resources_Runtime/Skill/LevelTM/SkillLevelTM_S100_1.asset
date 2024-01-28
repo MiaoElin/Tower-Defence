@@ -9,13 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8784a6291b420741b4f8e668641c7a5, type: 3}
-  m_Name: WaveSpawnTM_W1_ 1
+  m_Script: {fileID: 11500000, guid: cb825cb467b658d4b9dc938fb332a2f6, type: 3}
+  m_Name: SkillLevelTM_S100_1
   m_EditorClassIdentifier: 
-  entityTyPe: 1
-  entityTypeID: 2
-  conut: 10
-  startTime: 0
-  endTime: 10
-  interval: 1
-  timer: 0
+  skillTypeID: 100
+  level: 1
+  bulTypeID: 0
+  cdMax: 0
+  maintain: 0
+  interval: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 0b5dc6a18111a934e9ee6aadd5b99a74
   m_currentHash:
     serializedVersion: 2
-    Hash: 6e2df688bbb9e60a94f1ad513fbf4480
+    Hash: ae209c629d0b7bb191c7d84c7fe3bccf
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -104,6 +104,8 @@ MonoBehaviour:
     - TowerSite
     - RoleTM
     - SpawnerTM
+    - BulletTM
+    - LevelTM
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 52b32c1880fc8584495ce126aa200e59, type: 2}

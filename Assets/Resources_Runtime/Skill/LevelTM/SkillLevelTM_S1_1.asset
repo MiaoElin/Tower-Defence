@@ -15,8 +15,6 @@ MonoBehaviour:
   skillTypeID: 1
   level: 1
   bulTypeID: 1
-  id: 1
-  sprite: {fileID: 2009410003007727163, guid: c705906f76b34b843af32de6ff27110c, type: 3}
   cdMax: 0
   maintain: 1
   interval: 0.3

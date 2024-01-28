@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac0cb4877c79ce479a5def67b95f413, type: 3}
+  m_Name: RoleTM_100
+  m_EditorClassIdentifier: 
+  typeID: 100
+  sprite: {fileID: 21300000, guid: 1001816ac5c58d44c98b01414d52e929, type: 3}
+  moveSpeed: 20
+  path: []
+  skillModelTMs:
+  - {fileID: 11400000, guid: 400ab8af4b0c76743ac0b03af8c0620d, type: 2}

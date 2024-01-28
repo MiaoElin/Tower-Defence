@@ -41,6 +41,48 @@ MonoBehaviour:
     m_SerializedLabels:
     - Entities
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6248bf2360de6c478c1e683e33ca854
+    m_Address: Assets/Resources_Runtime/bullet/BulletTM_2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BulletTM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e9fda1b8589ec884cb9854960f6f8219
+    m_Address: Assets/Resources_Runtime/bullet/BulletTM_1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BulletTM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c6526e00f797254b9623064c149fe6e
+    m_Address: Assets/Resources_Runtime/LevelTM/LevelTM_L1_Easy_battle.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LevelTM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 22707111f94f83c44b0f1781c95138fe
+    m_Address: Assets/Resources_Runtime/Role/RoleTM_100.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - RoleTM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4090daaf69476fe4d948da5c9758959c
+    m_Address: Assets/Resources_Runtime/Skill/LevelTM/SkillLevelTM_S1_2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SkillLevelTM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c56e0b7e50390e42ae6b041ff72a028
+    m_Address: Assets/Resources_Runtime/Skill/LevelTM/SkillLevelTM_S2_2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SkillLevelTM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: adbfeb98c94028840850ba61ce7d159f
+    m_Address: Assets/Resources_Runtime/Skill/LevelTM/SkillLevelTM_S_100_1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SkillLevelTM
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 99c48106b7df5c24082eec72495addf8, type: 2}
   m_SchemaSet:

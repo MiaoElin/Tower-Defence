@@ -18,7 +18,7 @@ MonoBehaviour:
   roleTypeID: 1
   rolePath: []
   roleCount: 1
-  isSpawn: 0
+  isSpawn: 1
   cd: 1
   cdMax: 1
   maintain: 0.5

@@ -10,14 +10,14 @@ public class TowerEntity : MonoBehaviour {
     public Vector2 size;
     public SpriteRenderer sr;
     // ===Spawner===
-    public List<Spawner> spawners;
+    public SpawnerComponent spawnerComponent;
     // ===Action===
     public Action OnclickTower;
     public int[]allowBuildTypeIDs;
     public List <int> allRoles;
     public TowerEntity() {
         allRoles=new List<int> ();
-        spawners=new List<Spawner> ();
+        spawnerComponent=new SpawnerComponent ();
     }
     public void Ctor() {
 
