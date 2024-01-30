@@ -17,7 +17,7 @@ MonoBehaviour:
   ally: 0
   roleTypeID: 2
   rolePath: []
-  roleCount: 10
+  roleCount: 3
   isSpawn: 1
   cd: 0
   cdMax: 0

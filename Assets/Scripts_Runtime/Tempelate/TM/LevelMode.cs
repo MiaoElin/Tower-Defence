@@ -7,6 +7,7 @@ public class LevelMode : ScriptableObject {
     public Difficulty difficulty;
     public ChallengeMode challengeMode;
     public int playerHp;
+    public Vector2[] monsterPos;
     public Vector2[] homeEntities;
     public Vector2[] sitesPos;//塔位点
     public Vector2[] path;

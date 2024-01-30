@@ -13,11 +13,11 @@ public class TowerEntity : MonoBehaviour {
     public SpawnerComponent spawnerComponent;
     // ===Action===
     public Action OnclickTower;
-    public int[]allowBuildTypeIDs;
-    public List <int> allRoles;
+    public int[] allowBuildTypeIDs;
+    public List<int> allRoleID;
     public TowerEntity() {
-        allRoles=new List<int> ();
-        spawnerComponent=new SpawnerComponent ();
+        allRoleID = new List<int>();
+        spawnerComponent = new SpawnerComponent();
     }
     public void Ctor() {
 

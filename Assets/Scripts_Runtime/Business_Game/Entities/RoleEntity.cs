@@ -5,7 +5,9 @@ public class RoleEntity : MonoBehaviour {
     public Ally ally;
     public SpriteRenderer sr;
     public float moveSpeed;
+    // ===path===
     public Vector2[] path;
+    public int pathIndex;
     // ===skill===
     public bool isMelee;//是否近战攻击
     public bool hasBullet;//是否发射子弹

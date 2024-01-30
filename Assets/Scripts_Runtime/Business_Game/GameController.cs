@@ -5,7 +5,9 @@ using UnityEngine.UI;
 public static class Gamecontroller {
     public static void EnterGame(GameContext con) {
         GameEntity game = con.gameEntity;
-        // 生成波次
+        // 生成等级
+        LevelEntity level = LevelDomain.SpawnLevel(con, 1, Difficulty.Easy, ChallengeMode.BattleChallen);
+        con.level=level;
         // 生成地图
         const string lable = "map";
         IList<GameObject> all = Addressables.LoadAssetsAsync<GameObject>(lable, null).WaitForCompletion();
@@ -49,7 +51,7 @@ public static class Gamecontroller {
         int towerLen = con.towerRepo.TakeAll(out TowerEntity[] all_tower);
         for (int i = 0; i < towerLen; i++) {
             var tower = all_tower[i];
-            TowerDomain.TrySpawnRole(con, tower, dt);
+            TowerDomain.TrySpawnRole(con, tower, dt,con.level);
         }
     }
     public static void Fixed_Tick() {

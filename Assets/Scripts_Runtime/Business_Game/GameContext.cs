@@ -13,6 +13,7 @@ public class GameContext {
     public GameEntity gameEntity;
     public PlayerEntity playerEntity;
     public InputEntity input;
+    public LevelEntity level;
     // ===Cavans===
     public Canvas gameCanvas;
     public GameContext() {

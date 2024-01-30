@@ -7,8 +7,13 @@ public class LevelEntity : MonoBehaviour {
     public ChallengeMode challengeMode;
     public int playerHp;
     public Image map;
+    public Vector2[] monsterPos;
     public Vector2[] homeEntities;
     public Vector2[] sitesPos;//塔位点
-    public Vector2[]path;
+    public Vector2[] path;
     public SpawnerComponent spawnerComponent;
+    public List<int> allRoleID;
+    public LevelEntity(){
+        allRoleID=new List<int> ();
+    }
 }

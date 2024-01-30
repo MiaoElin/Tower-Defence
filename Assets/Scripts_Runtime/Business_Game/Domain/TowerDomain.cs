@@ -31,8 +31,9 @@ public static class TowerDomain {
             spawner.timer = spawner.interval;
             for (int i = 0; i < spawner.roleCount; i++) {
                 RoleEntity role = RoleDomain.SpawnRole(con, spawner.roleTypeID, spawner.ally, tower.transform.position);
-                tower.allRoles.Add(role.id);
+                tower.allRoleID.Add(role.id);
                 spawner.isSpawn = false;
+                role.path=
             }
         });
 
