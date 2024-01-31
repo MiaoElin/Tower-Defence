@@ -8,7 +8,7 @@ public static class TowerDomain {
         con.towerRepo.Add(tower);
         return tower;
     }
-    public static void TrySpawnRole(GameContext con, TowerEntity tower, float dt) {
+    public static void TrySpawnRole(GameContext con, TowerEntity tower, float dt, LevelEntity level) {
         tower.spawnerComponent.Foreach((Spawner spawner) => {
             if (!spawner.isSpawn) {
                 return;
@@ -33,7 +33,12 @@ public static class TowerDomain {
                 RoleEntity role = RoleDomain.SpawnRole(con, spawner.roleTypeID, spawner.ally, tower.transform.position);
                 tower.allRoleID.Add(role.id);
                 spawner.isSpawn = false;
-                role.path=
+                Vector2 nearlysite = PFPhysics.FindPointNearlyPoint(tower.transform.position, level.path);
+                if(tower.transform.position.x==nearlysite.x){
+                    Vector2 pos=new Vector2 (nearlysite.x+i-0.5f,nearlysite.y);
+                    role.path=new Vector2 []{pos};
+                }
+                // role.path= new Vector2 []{nearlysite}
             }
         });
 

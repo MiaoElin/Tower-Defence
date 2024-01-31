@@ -14,6 +14,7 @@ public class TempelateContext {
         roleTMs = new Dictionary<int, RoleTM>();
         spawnerTMs = new Dictionary<int, Spawner>();
         bulletTMs = new Dictionary<int, BulletTM>();
+        levelTMs=new Dictionary<int, LevelTM> ();
     }
     public void Add_TowerTM(TowerTM tm) {
         towerTMs.Add(tm.typeID, tm);
@@ -53,4 +54,8 @@ public class TempelateContext {
     public bool TryGet_leveTM(int typeID, out LevelTM levelTM) {
         return levelTMs.TryGetValue(typeID, out levelTM);
     }
+    // public void Add_levelMode(LevelMode levelMode){
+    //     levelModes.Add(levelMode.id,levelMode);
+    // }
+    // public bool Tryget_levelMode(int )
 }

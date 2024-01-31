@@ -24,7 +24,7 @@ public static class LevelDomain {
             }
             spawner.timer = spawner.interval;
             for (int i = 0; i < spawner.roleCount; i++) {
-                RoleEntity role = RoleDomain.SpawnRole(con, spawner.roleTypeID, spawner.ally, level.transform.position);
+                RoleEntity role = RoleDomain.SpawnRole(con, spawner.roleTypeID, spawner.ally, spawner.SpawerPos);
                 level.allRoleID.Add(role.id);
                 spawner.isSpawn = false;
                 role.path = level.path;
@@ -32,6 +32,7 @@ public static class LevelDomain {
         });
     }
     public static void SpawnSite(GameContext con, LevelEntity level) {
+        Debug.Log("site");
         Vector2[] sitePos = level.sitesPos;
         foreach (var site in sitePos) {
             TowerDomain.SpawnTower(con, 0, site, Ally.Player);

@@ -19,13 +19,14 @@ public static class Gamecontroller {
         // 打开Panel_Heart
         UIApp.P_Heart_Open(con.uicon, player.hp);
         // 生成塔位点
-        TowerDomain.SpawnTower(con, 0, new Vector2(4.3f, 2.7f), Ally.Player);
-        TowerDomain.SpawnTower(con, 0, new Vector2(2.35f, -3), Ally.Player);
-        TowerDomain.SpawnTower(con, 0, new Vector2(-9.7f, -0.2f), Ally.Player);
-        TowerDomain.SpawnTower(con, 0, new Vector2(-9.8f, 5.6f), Ally.Player);
-        TowerDomain.SpawnTower(con, 0, new Vector2(6f, 8.2f), Ally.Player);
-        TowerDomain.SpawnTower(con, 0, new Vector2(0.1f, 8.2f), Ally.Player);
-        TowerDomain.SpawnTower(con, 0, new Vector2(-1.7f, 2.7f), Ally.Player);
+        LevelDomain.SpawnSite(con,level);
+        // TowerDomain.SpawnTower(con, 0, new Vector2(4.3f, 2.7f), Ally.Player);
+        // TowerDomain.SpawnTower(con, 0, new Vector2(2.35f, -3), Ally.Player);
+        // TowerDomain.SpawnTower(con, 0, new Vector2(-9.7f, -0.2f), Ally.Player);
+        // TowerDomain.SpawnTower(con, 0, new Vector2(-9.8f, 5.6f), Ally.Player);
+        // TowerDomain.SpawnTower(con, 0, new Vector2(6f, 8.2f), Ally.Player);
+        // TowerDomain.SpawnTower(con, 0, new Vector2(0.1f, 8.2f), Ally.Player);
+        // TowerDomain.SpawnTower(con, 0, new Vector2(-1.7f, 2.7f), Ally.Player);
         game.status = GameStatus.Ingame;
 
     }
@@ -52,6 +53,12 @@ public static class Gamecontroller {
         for (int i = 0; i < towerLen; i++) {
             var tower = all_tower[i];
             TowerDomain.TrySpawnRole(con, tower, dt,con.level);
+        }
+        //移动角色
+        int roleLen= con.roleRepo.TakeAll(out RoleEntity []all_role);
+        for(int i =0;i<roleLen;i++){
+            var role =all_role[i];
+            RoleDomain.Move(con,role,dt);
         }
     }
     public static void Fixed_Tick() {

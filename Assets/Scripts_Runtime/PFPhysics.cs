@@ -8,4 +8,17 @@ public static class PFPhysics {
         }
         return false;
     }
+    public static Vector2 FindPointNearlyPoint(Vector2 pointPos, Vector2[] poss) {
+        float neaarlyDistance = float.MaxValue;
+        Vector2 nearlyPos=default;
+        foreach (var pos in poss) {
+           float distance= Vector2.Distance(pointPos,pos);
+        if(distance>neaarlyDistance){
+            continue;
+        }
+        neaarlyDistance=distance;
+        nearlyPos=pos;
+        }
+        return nearlyPos;
+    }
 }

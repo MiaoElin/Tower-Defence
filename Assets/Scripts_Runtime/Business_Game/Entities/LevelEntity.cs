@@ -6,7 +6,7 @@ public class LevelEntity : MonoBehaviour {
     public Difficulty difficulty;
     public ChallengeMode challengeMode;
     public int playerHp;
-    public Image map;
+    public SpriteRenderer map;
     public Vector2[] monsterPos;
     public Vector2[] homeEntities;
     public Vector2[] sitesPos;//塔位点
@@ -14,6 +14,6 @@ public class LevelEntity : MonoBehaviour {
     public SpawnerComponent spawnerComponent;
     public List<int> allRoleID;
     public LevelEntity(){
-        allRoleID=new List<int> ();
+       spawnerComponent=new SpawnerComponent ();
     }
 }

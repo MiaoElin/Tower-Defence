@@ -51,10 +51,10 @@ public static class TempelateInfra {
             }
         }
         {
-            const string label="LevelTM";
-            IList<LevelTM>all=Addressables.LoadAssetsAsync<LevelTM>(label,null).WaitForCompletion();
-            foreach(var tm in all){
-                
+            const string label = "LevelTM";
+            IList<LevelTM> all = Addressables.LoadAssetsAsync<LevelTM>(label, null).WaitForCompletion();
+            foreach (var tm in all) {
+                tempCon.Add_levelTM(tm);
             }
         }
     }

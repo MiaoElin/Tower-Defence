@@ -15,4 +15,5 @@ public class SpawnerTM : ScriptableObject {
     public float maintainTimer;
     public float interval;
     public float timer;
+    public Vector2 SpawerPos;
 }

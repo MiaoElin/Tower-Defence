@@ -83,6 +83,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - SkillLevelTM
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 414ac0c581fd1fe49ba8484a34d0b060
+    m_Address: Assets/Resources_Runtime/LevelTM/L1Mode/L1Mode_Easy_battle.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LevelTM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fcced6bbc2bbeba46a0b59db8547232e
+    m_Address: Assets/Resources_Runtime/LevelEntity.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - LevelTM
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 99c48106b7df5c24082eec72495addf8, type: 2}
   m_SchemaSet:

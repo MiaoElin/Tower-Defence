@@ -113,10 +113,12 @@ public static class GameFactory {
         if (!has) {
             Debug.LogError("GameFactory.CreateLevel not found");
         }
-        LevelEntity level = new LevelEntity();
+        con.assets.TryGet_Entity(typeof(LevelEntity).Name, out GameObject prefab);
+        LevelEntity level = GameObject.Instantiate(prefab).GetComponent<LevelEntity>();
+        // LevelEntity level = new LevelEntity();
         level.map.sprite = tm.map;
         LevelMode[] levelModes = tm.levelModes;
-        LevelMode mode = new LevelMode();
+        LevelMode mode =default;
         foreach (var levelMode in levelModes) {
             if (levelMode.challengeMode == challengeMode) {
                 if (levelMode.difficulty == difficulty) {
@@ -137,14 +139,14 @@ public static class GameFactory {
             spawner.ally = Ally.Monster;
             spawner.roleTypeID = spTM.roleTypeID;
             spawner.rolePath = level.path;
-            spawner.roleCount=spTM.roleCount;
-            spawner.isSpawn=true;
+            spawner.roleCount = spTM.roleCount;
+            spawner.isSpawn = true;
             spawner.cd = spTM.cd;
-            spawner.cdMax=spTM.cdMax;
-            spawner.maintain=spTM.maintain;
-            spawner.maintainTimer=spTM.maintainTimer;
-            spawner.interval=spTM.interval;
-            spawner.timer=spTM.timer;
+            spawner.cdMax = spTM.cdMax;
+            spawner.maintain = spTM.maintain;
+            spawner.maintainTimer = spTM.maintainTimer;
+            spawner.interval = spTM.interval;
+            spawner.timer = spTM.timer;
             level.spawnerComponent.Add(spawner);
         }
         return level;
