@@ -7,7 +7,7 @@ public static class Gamecontroller {
         GameEntity game = con.gameEntity;
         // 生成等级
         LevelEntity level = LevelDomain.SpawnLevel(con, 1, Difficulty.Easy, ChallengeMode.BattleChallen);
-        con.level = level;
+        con.gameEntity.levelID=level.id;
         // 生成地图
         // const string lable = "map";
         // IList<GameObject> all = Addressables.LoadAssetsAsync<GameObject>(lable, null).WaitForCompletion();
@@ -18,9 +18,8 @@ public static class Gamecontroller {
         player.Init(5);
         // 打开Panel_Heart
         UIApp.P_Heart_Open(con.uicon, player.hp);
-        // 生成塔位点
-        LevelDomain.SpawnSite(con, level);
         game.status = GameStatus.Ingame;
+        // 
 
     }
     public static void Tick(GameContext con, float dt) {
@@ -41,21 +40,28 @@ public static class Gamecontroller {
         // 每帧加载Panel_Heart
         UIApp.P_Heart_Update(con.uicon, con.playerEntity.hp);
         UserInterfaceDomain.PreTick(con);
+        // 获取当前的关卡
+        LevelEntity level=con.TryGetLevel();
+        // 生成塔位点
+        LevelDomain.SpawnSite(con);
+        // 生成HomeEntity
+        LevelDomain.SpawnHome(con);
         // 尝试生成角色
         int towerLen = con.towerRepo.TakeAll(out TowerEntity[] all_tower);
         for (int i = 0; i < towerLen; i++) {
             var tower = all_tower[i];
-            TowerDomain.TrySpawnRole(con, tower, dt, con.level);
+            TowerDomain.TrySpawnRole(con, tower, dt, level);
         }
         // 生成monster
-        LevelEntity level=con.level;
         LevelDomain.TrySpawnMonster(con, level, dt);
+
         //移动角色
         int roleLen = con.roleRepo.TakeAll(out RoleEntity[] all_role);
         for (int i = 0; i < roleLen; i++) {
             var role = all_role[i];
             RoleDomain.Move(con, role, dt);
         }
+
     }
     public static void Fixed_Tick() {
         // 

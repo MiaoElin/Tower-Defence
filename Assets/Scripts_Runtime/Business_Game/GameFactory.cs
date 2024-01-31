@@ -1,37 +1,5 @@
 using UnityEngine;
 public static class GameFactory {
-    // public static SkillModel CreateSkillModel(GameContext con,int typeID){
-    //     // bool 
-    // }
-    // public static TowerEntity CreateTower(GameContext con, IDService iDService, int typeID, Vector2 pos) {
-    //     bool has = con.tempCon.TryGet_TowerTM(typeID, out TowerTM tm);
-    //     if (!has) {
-    //         Debug.LogError($"Factory.CreateTower: {typeID} not Found");
-    //         return default;
-    //     }
-    //     con.assets.TryGet_Entity(typeof(TowerEntity).Name, out GameObject prefab);
-    //     TowerEntity tower = GameObject.Instantiate(prefab).GetComponent<TowerEntity>();
-    //     tower.typeID = typeID;
-    //     tower.id = iDService.towerIDRecord++;
-    //     tower.SetPos(pos);
-    //     // SkillModelTM[] skillModelTMs = tm.skillModelTMs;
-    //     // foreach (var skillTM in skillModelTMs) {
-    //     //     SkillModel skill = new SkillModel();
-    //     //     skill.typeID = skillTM.typeID;
-    //     //     skill.SkillLevel = skillTM.SkillLevel;
-    //     //     skill.skillType = skillTM.skillType;
-    //     //     SkillLevelTM levelTM = skillTM.skillLevelTMs[skill.SkillLevel - 1];
-    //     //     skill.cd = 0;
-    //     //     // skill.cdMax = levelTM.cdMax;
-    //     //     // skill.maintain = levelTM.maintain;
-    //     //     // skill.maintainTimer = 0;
-    //     //     // skill.interval = levelTM.interval;
-    //     //     // skill.intervalTimer = 0;
-    //     //     // skill.sprite = levelTM.sprite;
-    //     //     // tower.skillModelComponent.Add(skill);
-    //     }
-    //     return tower;
-    // }
     public static TowerEntity CreateTower(GameContext con, IDService iDService, int typeID, Vector2 pos, Ally ally) {
         bool has = con.tempCon.TryGet_TowerTM(typeID, out TowerTM tm);
         if (!has) {
@@ -66,9 +34,11 @@ public static class GameFactory {
         }
         return tower;
     }
-    public static void CreateHome(GameContext con, Vector2 pos) {
-        HomeEntity home = new HomeEntity();
+    public static HomeEntity  CreateHome(GameContext con, Vector2 pos) {
+        con.assets.TryGet_Entity("HomeEntity",out GameObject prefab);
+        HomeEntity home = GameObject.Instantiate(prefab).GetComponent<HomeEntity>();
         home.SetPos(pos);
+        return home;
     }
     public static RoleEntity CreateRole(GameContext con, IDService iDService, int typeID, Ally ally, Vector2 pos) {
         bool has = con.tempCon.TryGet_RoleTM(typeID, out RoleTM tm);
@@ -117,6 +87,7 @@ public static class GameFactory {
         con.assets.TryGet_Entity(typeof(LevelEntity).Name, out GameObject prefab);
         LevelEntity level = GameObject.Instantiate(prefab).GetComponent<LevelEntity>();
         // LevelEntity level = new LevelEntity();
+        level.id=con.iDService.levelIDRecord++;
         level.map.sprite = tm.map;
         LevelMode[] levelModes = tm.levelModes;
         LevelMode mode =default;

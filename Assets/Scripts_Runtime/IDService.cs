@@ -3,12 +3,12 @@ public class IDService {
     public int roleIDRecord;
     public int bulletIDRecord;
     public int homeIDRecord;
-    public int siteIDRecord;
+    public int levelIDRecord;
     public IDService(){
         towerIDRecord=0;
         roleIDRecord=0;
         bulletIDRecord=0;
         homeIDRecord=0;
-        siteIDRecord=0;
+        levelIDRecord=0;
     }
 }

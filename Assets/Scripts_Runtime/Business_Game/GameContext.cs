@@ -9,19 +9,26 @@ public class GameContext {
     // ===Repository===
     public TowerRepo towerRepo;
     public RoleRepo roleRepo;
+    public HomeRepo homeRepo;
+    public BulletRepo bulletRepo;
+    public LevelRepo levelRepo;
     // ===Entity===
     public GameEntity gameEntity;
     public PlayerEntity playerEntity;
     public InputEntity input;
-    public LevelEntity level;
     // ===Cavans===
     public Canvas gameCanvas;
     public GameContext() {
-        iDService = new IDService();
         towerRepo = new TowerRepo();
         roleRepo = new RoleRepo();
+        homeRepo = new HomeRepo();
+        levelRepo = new LevelRepo();
+        bulletRepo = new BulletRepo();
+
         gameEntity = new GameEntity();
         playerEntity = new PlayerEntity();
+        iDService = new IDService();
+
 
     }
     public void Inject(InputEntity input, TempelateContext tempCon, AssetsContext assets, UIcontext uicon, Canvas gameCanvas) {
@@ -30,5 +37,9 @@ public class GameContext {
         this.assets = assets;
         this.uicon = uicon;
         this.gameCanvas = gameCanvas;
+    }
+    public LevelEntity TryGetLevel() {
+        levelRepo.TryGet(gameEntity.levelID,out LevelEntity level);
+        return level;
     }
 }
