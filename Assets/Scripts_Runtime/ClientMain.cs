@@ -14,13 +14,15 @@ public class ClientMain : MonoBehaviour {
         Debug.Log("hello world");
         // 设置帧率
         Application.targetFrameRate = 120;
+        // 获取deltaTime
+        float dt= Time.deltaTime;
         // 初始化
         con = new MainContext();
         // 注入 
         // gameObject.GetComponentInChildren<Canvas[]>();
         con.Inject(panelCanvas, gameCanvas);
         // event
-        BindEvent();
+        BindEvent(dt);
         // Init
         Init();
         // 开始
@@ -32,11 +34,11 @@ public class ClientMain : MonoBehaviour {
         TempelateInfra.LoadAll(con.tempCon);
         AssetsInfra.LoadAll(con.assetsCon);
     }
-    void BindEvent() {
+    void BindEvent(float dt) {
         UIEventCenter uIEventCenter = con.uIcon.UIEventCenter;
         uIEventCenter.Login_OnClickStartHandle += () => {
             UIApp.P_Login_Close(con.uIcon);
-            Gamecontroller.EnterGame(con.gameCon);
+            Gamecontroller.EnterGame(con.gameCon,dt);
         };
         uIEventCenter.Login_OnClickSettingHandle += () => {
             UIApp.P_Setting_Open(con.uIcon);

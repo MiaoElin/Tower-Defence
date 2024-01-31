@@ -19,6 +19,9 @@ public static class PFPhysics {
         neaarlyDistance=distance;
         nearlyPos=pos;
         }
+        if(nearlyPos==default){
+            Debug.LogError("not found nearlyPos");
+        }
         return nearlyPos;
     }
 }

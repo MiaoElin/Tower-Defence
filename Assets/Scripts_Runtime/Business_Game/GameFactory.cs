@@ -79,6 +79,7 @@ public static class GameFactory {
         con.assets.TryGet_Entity(typeof(RoleEntity).Name, out GameObject prefab);
         RoleEntity role = GameObject.Instantiate(prefab).GetComponent<RoleEntity>();
         role.typeID = typeID;
+        role.ally=ally;
         role.id = iDService.roleIDRecord++;
         role.SetPos(pos);
         role.sr.sprite = tm.sprite;
@@ -137,6 +138,7 @@ public static class GameFactory {
         foreach (var spTM in spawnerTMs) {
             Spawner spawner = new Spawner();
             spawner.ally = Ally.Monster;
+            spawner.SpawerPos=spTM.SpawerPos;
             spawner.roleTypeID = spTM.roleTypeID;
             spawner.rolePath = level.path;
             spawner.roleCount = spTM.roleCount;

@@ -14,6 +14,9 @@ public static class RoleDomain {
         if (role.path == null) {
             return;
         }
+        if (role.pathIndex == role.path.Length) {
+            return;
+        }
         Vector2 target = role.path[role.pathIndex];
         Vector2 dir = target - (Vector2)role.transform.position;
         if (dir.sqrMagnitude <= 0.01f) {
@@ -21,9 +24,7 @@ public static class RoleDomain {
         } else {
             role.Move(dir.normalized, dt);
         }
-        if (role.pathIndex == role.path.Length) {
-            return;
-        }
+
     }
 
 }
