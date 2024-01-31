@@ -14,7 +14,7 @@ public class LevelEntity : MonoBehaviour {
     public int sitePosCount;
     public Vector2[] path;
     public SpawnerComponent spawnerComponent;
-    public List<int> allRoleID;
+    public List<int> allMonsterID;
     public LevelEntity(){
        spawnerComponent=new SpawnerComponent ();
        sitePosCount=0;
