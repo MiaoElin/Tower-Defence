@@ -6,7 +6,7 @@ public class BulletRepo{
         all=new Dictionary<int, BulletEntity> ();
         tempArray=new BulletEntity[1000];
     }
-    public void add(BulletEntity bullet){
+    public void Add(BulletEntity bullet){
         all.Add(bullet.id,bullet);
     }
     public void Remove(BulletEntity bullet){

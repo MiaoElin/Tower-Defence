@@ -5,7 +5,7 @@ public class TempelateContext {
     // Dictionary<int, SkillLevelTM> skillLevelTMs;
     Dictionary<int, RoleTM> roleTMs;
     Dictionary<int, Spawner> spawnerTMs;
-    Dictionary<int, BulletTM> bulletTMs;
+   public  Dictionary<int, BulletTM> bulletTMs;
     Dictionary<int, LevelTM> levelTMs;
     public TempelateContext() {
         towerTMs = new Dictionary<int, TowerTM>();
@@ -14,7 +14,7 @@ public class TempelateContext {
         roleTMs = new Dictionary<int, RoleTM>();
         spawnerTMs = new Dictionary<int, Spawner>();
         bulletTMs = new Dictionary<int, BulletTM>();
-        levelTMs=new Dictionary<int, LevelTM> ();
+        levelTMs = new Dictionary<int, LevelTM>();
     }
     public void Add_TowerTM(TowerTM tm) {
         towerTMs.Add(tm.typeID, tm);
@@ -47,6 +47,9 @@ public class TempelateContext {
     // public void 
     public void Add_BulletTM(BulletTM tm) {
         bulletTMs.Add(tm.typeID, tm);
+    }
+    public bool TryGet_BulTM(int typeID, out BulletTM tm) {
+        return bulletTMs.TryGetValue(typeID, out tm);
     }
     public void Add_levelTM(LevelTM tm) {
         levelTMs.Add(tm.level, tm);

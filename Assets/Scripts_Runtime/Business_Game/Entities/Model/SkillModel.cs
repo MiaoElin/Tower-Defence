@@ -11,7 +11,7 @@ public class SkillModel {
     public float maintain;
     public float maintainTimer;
     public float interval;
-    public float intervalTimer;
+    public float timer;
     public SkillModel() {
     }
 }

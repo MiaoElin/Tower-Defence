@@ -10,4 +10,6 @@ public class TowerTM : ScriptableObject {
     public Sprite sprite;
     public SpawnerTM[] spawnerTMs;
     public int[] allowBuildTowers;
+    public float shootRadius;
+
 }

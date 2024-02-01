@@ -93,7 +93,31 @@ MonoBehaviour:
     m_Address: Assets/Resources_Runtime/LevelEntity.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
-    - LevelTM
+    - Entities
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 63ee25dc725e7ba449ee244369d60cd0
+    m_Address: Assets/Resources_Runtime/HomeEntity.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Entities
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa19b1742443c114486deabc5d14885d
+    m_Address: Assets/Resources_Runtime/BulletEntity.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Entities
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17e5bcb0c580cd949b8db02f14a83f3f
+    m_Address: Assets/Resources_Runtime/Skill/ModelTM/SkillModelTM_S3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SkillModelTM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 60e2a6052d42d9341815d02b8167d166
+    m_Address: Assets/Resources_Runtime/Skill/LevelTM/SkillLevelTM_S3_1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SkillLevelTM
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 99c48106b7df5c24082eec72495addf8, type: 2}

@@ -20,3 +20,4 @@ MonoBehaviour:
   spawnerTMs:
   - {fileID: 11400000, guid: 68febdb51bd92854787a6029205408bc, type: 2}
   allowBuildTowers: 
+  shootRadius: 8

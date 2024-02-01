@@ -16,5 +16,9 @@ MonoBehaviour:
   sprite: {fileID: 3665289085622778775, guid: 4eee8436d23b22e4fbec97fa691829f6, type: 3}
   moveSpeed: 20
   path: []
+  pathIndex: 0
+  meleeRadius: 3
+  shootRadius: 8
   skillModelTMs:
   - {fileID: 11400000, guid: 400ab8af4b0c76743ac0b03af8c0620d, type: 2}
+  - {fileID: 11400000, guid: 17e5bcb0c580cd949b8db02f14a83f3f, type: 2}

@@ -7,7 +7,7 @@ public static class Gamecontroller {
         GameEntity game = con.gameEntity;
         // 生成等级
         LevelEntity level = LevelDomain.SpawnLevel(con, 1, Difficulty.Easy, ChallengeMode.BattleChallen);
-        con.gameEntity.levelID=level.id;
+        con.gameEntity.levelID = level.id;
         // 生成地图
         // const string lable = "map";
         // IList<GameObject> all = Addressables.LoadAssetsAsync<GameObject>(lable, null).WaitForCompletion();
@@ -41,7 +41,7 @@ public static class Gamecontroller {
         UIApp.P_Heart_Update(con.uicon, con.playerEntity.hp);
         UserInterfaceDomain.PreTick(con);
         // 获取当前的关卡
-        LevelEntity level=con.TryGetLevel();
+        LevelEntity level = con.TryGetLevel();
         // 生成塔位点
         LevelDomain.SpawnSite(con);
         // 生成HomeEntity
@@ -51,6 +51,10 @@ public static class Gamecontroller {
         for (int i = 0; i < towerLen; i++) {
             var tower = all_tower[i];
             TowerDomain.TrySpawnRole(con, tower, dt, level);
+            bool has = con.roleRepo.FindNearlyEnemy(tower.transform.position, tower.ally, tower.shootRadius, out RoleEntity nearlyEnemy);
+            if (has) {
+                tower.LookAt(nearlyEnemy.gameObject);
+            }
         }
         // 生成monster
         LevelDomain.TrySpawnMonster(con, level, dt);
@@ -60,6 +64,14 @@ public static class Gamecontroller {
         for (int i = 0; i < roleLen; i++) {
             var role = all_role[i];
             RoleDomain.Move(con, role, dt);
+            RoleDomain.TryShootBul(con, role, dt);
+        }
+        Debug.Log("bullet has:" + con.tempCon.bulletTMs.Count);
+        // 移动子弹
+        int bulLen = con.bulletRepo.TakeAll(out BulletEntity[] all_bul);
+        for (int i = 0; i < bulLen; i++) {
+            var bul = all_bul[i];
+            BulletDomain.Move(con, dt, bul);
         }
 
     }

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: L1Mode_Easy_battle
   m_EditorClassIdentifier: 
   level: 1
+  id: 0
   difficulty: 1
   challengeMode: 1
   playerHp: 20
@@ -43,7 +44,7 @@ MonoBehaviour:
   - {x: -6, y: 2}
   - {x: -6, y: 5}
   - {x: -1.7, y: 5}
-  - {x: -0.2, y: 5}
+  - {x: 0.2, y: 5}
   - {x: 4.3, y: 5}
   - {x: 6, y: 5}
   - {x: 8.7, y: 5}

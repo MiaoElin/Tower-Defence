@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeID: 100
   sprite: {fileID: 21300000, guid: 1001816ac5c58d44c98b01414d52e929, type: 3}
-  moveSpeed: 20
+  moveSpeed: 1
   path: []
+  pathIndex: 0
+  meleeRadius: 2
+  shootRadius: 5
   skillModelTMs:
   - {fileID: 11400000, guid: 400ab8af4b0c76743ac0b03af8c0620d, type: 2}

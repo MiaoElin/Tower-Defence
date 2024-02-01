@@ -6,11 +6,14 @@ public class RoleEntity : MonoBehaviour {
     public SpriteRenderer sr;
     public float moveSpeed;
     // ===path===
+    public bool isMoving;
     public Vector2[] path;
     public int pathIndex;
     // ===skill===
     public bool isMelee;//是否近战攻击
-    public bool hasBullet;//是否发射子弹
+    public bool isShoot;//是否发射子弹
+    public float shootRadius;
+    public float meleeRadius;
     public SkillModelComponent skillModelComponent; //存储各种技能
     // public void Init(Sprite spr) {
     //     sr.sprite = spr;

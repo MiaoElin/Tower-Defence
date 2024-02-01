@@ -6,5 +6,7 @@ public class RoleTM : ScriptableObject {
     public float moveSpeed;
     public Vector2[] path;
     public int pathIndex;
+    public float meleeRadius;
+    public float shootRadius;
     public SkillModelTM[] skillModelTMs;
 }

@@ -9,6 +9,7 @@ public static class GameFactory {
         con.assets.TryGet_Entity(typeof(TowerEntity).Name, out GameObject prefab);
         TowerEntity tower = GameObject.Instantiate(prefab).GetComponent<TowerEntity>();
         tower.typeID = typeID;
+        tower.ally=ally;
         tower.id = iDService.towerIDRecord++;
         tower.SetPos(pos);
         tower.typeName = tm.typeName;
@@ -16,6 +17,7 @@ public static class GameFactory {
         tower.size = tm.size;
         tower.sr.sprite = tm.sprite;
         tower.allowBuildTypeIDs = tm.allowBuildTowers;
+        tower.shootRadius=tm.shootRadius;
         SpawnerTM[] spawnerTMs = tm.spawnerTMs;
         foreach (var spawnerTM in spawnerTMs) {
             Spawner spawner = new Spawner();
@@ -52,9 +54,11 @@ public static class GameFactory {
         role.ally=ally;
         role.id = iDService.roleIDRecord++;
         role.SetPos(pos);
+        role.isMoving=true;
         role.sr.sprite = tm.sprite;
         role.moveSpeed = tm.moveSpeed;
         role.path = tm.path;
+        role.meleeRadius=tm.meleeRadius;
         SkillModelTM[] skillModelTMs = tm.skillModelTMs;
         foreach (var modeltm in skillModelTMs) {
             SkillModel skill = new SkillModel();
@@ -67,7 +71,7 @@ public static class GameFactory {
             skill.maintainTimer = 0;
             skill.maintain = levelTM.maintain;
             skill.interval = levelTM.interval;
-            skill.intervalTimer = 0;
+            skill.timer = 0;
             role.skillModelComponent.Add(skill);
             // skill(有多种技能，那图片该跟随那种技能？
             // 图片不应该跟随技能，应该跟随技能等级，不同的等级就属于不同的role，图片只要跟role就行？？)
@@ -76,8 +80,23 @@ public static class GameFactory {
         }
         return role;
     }
-    public static void CreateBullet() {
-
+    public static BulletEntity CreateBullet(GameContext con,IDService iDService,int typeID,Vector2 pos,Ally ally) {
+        bool has =con.tempCon.TryGet_BulTM(typeID,out BulletTM tm);
+        if(!has){
+            Debug.LogError($"Factory.CreateBullet:typeID:{typeID} not found");
+        }
+        con.assets.TryGet_Entity(typeof(BulletEntity).Name,out GameObject prefab);
+        BulletEntity bul=GameObject.Instantiate(prefab).GetComponent<BulletEntity>();
+        bul.SetPos(pos);
+        bul.typeID=typeID;
+        bul.id=iDService.bulletIDRecord++;
+        bul.ally=ally;
+        bul.moveSpeed=tm.moveSpeed;
+        bul.lethality=tm.lethality;
+        bul.size=tm.size;
+        bul.shapType=tm.shapType;
+        bul.sr.sprite=tm.sprite;
+        return bul;
     }
     public static LevelEntity CreateLevel(GameContext con, int levelID, Difficulty difficulty, ChallengeMode challengeMode) {
         bool has = con.tempCon.TryGet_leveTM(levelID, out LevelTM tm);

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a0336810697fa54d836e70904c7cb2d, type: 3}
   m_Name: BulletTM_2
   m_EditorClassIdentifier: 
-  typeID: 1
+  typeID: 2
   size: {x: 0.5, y: 0.5}
   shapType: 1
   moveSpeed: 100
-  sprite: {fileID: 6261204194188010130, guid: 749b9b1c156e2a044abd62580b0453f9, type: 3}
+  sprite: {fileID: 21300000, guid: 749b9b1c156e2a044abd62580b0453f9, type: 3}
   lethality: 10

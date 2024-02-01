@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class TowerEntity : MonoBehaviour {
     public int id;
     public int typeID;
+    public Ally ally;
     public string typeName;
     public int price;
     public Vector2 size;
@@ -15,6 +16,7 @@ public class TowerEntity : MonoBehaviour {
     public Action OnclickTower;
     public int[] allowBuildTypeIDs;
     public List<int> allRoleID;
+    public float shootRadius;
     public TowerEntity() {
         allRoleID = new List<int>();
         spawnerComponent = new SpawnerComponent();

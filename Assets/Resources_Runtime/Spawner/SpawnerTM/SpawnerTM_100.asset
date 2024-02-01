@@ -20,8 +20,9 @@ MonoBehaviour:
   roleCount: 10
   isSpawn: 1
   cd: 0
-  cdMax: 0.2
-  maintain: 0
+  cdMax: 0
+  maintain: 1
   maintainTimer: 0
-  interval: 0
+  interval: 0.2
   timer: 0
+  SpawerPos: {x: -21, y: 0.5}
