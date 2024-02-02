@@ -59,6 +59,7 @@ public static class GameFactory {
         role.moveSpeed = tm.moveSpeed;
         role.path = tm.path;
         role.meleeRadius=tm.meleeRadius;
+        role.shootRadius=tm.shootRadius;
         SkillModelTM[] skillModelTMs = tm.skillModelTMs;
         foreach (var modeltm in skillModelTMs) {
             SkillModel skill = new SkillModel();

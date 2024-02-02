@@ -18,6 +18,6 @@ MonoBehaviour:
   path: []
   pathIndex: 0
   meleeRadius: 2
-  shootRadius: 5
+  shootRadius: 0
   skillModelTMs:
   - {fileID: 11400000, guid: 400ab8af4b0c76743ac0b03af8c0620d, type: 2}

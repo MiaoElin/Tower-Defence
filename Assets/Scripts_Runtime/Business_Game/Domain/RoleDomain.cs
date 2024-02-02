@@ -27,8 +27,10 @@ public static class RoleDomain {
     }
     public static void IsMelee(GameContext con, RoleEntity role, out RoleEntity nearlyEnemy) {
         bool isShoot = con.roleRepo.FindNearlyEnemy(role.transform.position, role.ally, role.shootRadius, out RoleEntity near);
+        // Debug.Log(role.shootRadius);
         bool isMelee = con.roleRepo.FindNearlyEnemy(role.transform.position, role.ally, role.meleeRadius, out RoleEntity nearEnemy);
-        if (isShoot && !isMelee) {
+        // Debug.Log(role.meleeRadius);
+        if (isShoot) {
             Debug.Log("shoot");
             role.isShoot = true;
             role.isMelee = false;
@@ -48,6 +50,9 @@ public static class RoleDomain {
         return;
     }
     public static void TryShootBul(GameContext con, RoleEntity role, float dt) {
+        Debug.Log(role.shootRadius);
+        Debug.Log(role.meleeRadius);
+        Debug.Log(role.typeID);
         IsMelee(con, role, out RoleEntity nearlyEnemy);
         role.skillModelComponent.Foreach((SkillModel skill) => {
             skill.cd -= dt;
@@ -71,7 +76,6 @@ public static class RoleDomain {
                     Debug.Log("不动");
                     role.isMoving = false;
                     nearlyEnemy.isMoving = false;
-                    BulletDomain.SpawnBullet(con, skill.bulTypeID, role.transform.position, role.ally);
                 }
             }
             if (skill.skillType == SkillType.ShootBullet) {
