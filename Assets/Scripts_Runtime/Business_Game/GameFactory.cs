@@ -9,7 +9,7 @@ public static class GameFactory {
         con.assets.TryGet_Entity(typeof(TowerEntity).Name, out GameObject prefab);
         TowerEntity tower = GameObject.Instantiate(prefab).GetComponent<TowerEntity>();
         tower.typeID = typeID;
-        tower.ally=ally;
+        tower.ally = ally;
         tower.id = iDService.towerIDRecord++;
         tower.SetPos(pos);
         tower.typeName = tm.typeName;
@@ -17,7 +17,7 @@ public static class GameFactory {
         tower.size = tm.size;
         tower.sr.sprite = tm.sprite;
         tower.allowBuildTypeIDs = tm.allowBuildTowers;
-        tower.shootRadius=tm.shootRadius;
+        tower.shootRadius = tm.shootRadius;
         SpawnerTM[] spawnerTMs = tm.spawnerTMs;
         foreach (var spawnerTM in spawnerTMs) {
             Spawner spawner = new Spawner();
@@ -36,8 +36,8 @@ public static class GameFactory {
         }
         return tower;
     }
-    public static HomeEntity  CreateHome(GameContext con, Vector2 pos) {
-        con.assets.TryGet_Entity("HomeEntity",out GameObject prefab);
+    public static HomeEntity CreateHome(GameContext con, Vector2 pos) {
+        con.assets.TryGet_Entity("HomeEntity", out GameObject prefab);
         HomeEntity home = GameObject.Instantiate(prefab).GetComponent<HomeEntity>();
         home.SetPos(pos);
         return home;
@@ -51,15 +51,18 @@ public static class GameFactory {
         con.assets.TryGet_Entity(typeof(RoleEntity).Name, out GameObject prefab);
         RoleEntity role = GameObject.Instantiate(prefab).GetComponent<RoleEntity>();
         role.typeID = typeID;
-        role.ally=ally;
+        role.ally = ally;
+        role.isDead = false;
+        role.size = tm.size;
+        role.hp = tm.hp;
         role.id = iDService.roleIDRecord++;
         role.SetPos(pos);
-        role.isMoving=true;
+        role.isMoving = true;
         role.sr.sprite = tm.sprite;
         role.moveSpeed = tm.moveSpeed;
         role.path = tm.path;
-        role.meleeRadius=tm.meleeRadius;
-        role.shootRadius=tm.shootRadius;
+        role.meleeRadius = tm.meleeRadius;
+        role.shootRadius = tm.shootRadius;
         SkillModelTM[] skillModelTMs = tm.skillModelTMs;
         foreach (var modeltm in skillModelTMs) {
             SkillModel skill = new SkillModel();
@@ -81,22 +84,24 @@ public static class GameFactory {
         }
         return role;
     }
-    public static BulletEntity CreateBullet(GameContext con,IDService iDService,int typeID,Vector2 pos,Ally ally) {
-        bool has =con.tempCon.TryGet_BulTM(typeID,out BulletTM tm);
-        if(!has){
+    public static BulletEntity CreateBullet(GameContext con, IDService iDService, int typeID, Vector2 pos, Ally ally) {
+        bool has = con.tempCon.TryGet_BulTM(typeID, out BulletTM tm);
+        if (!has) {
             Debug.LogError($"Factory.CreateBullet:typeID:{typeID} not found");
         }
-        con.assets.TryGet_Entity(typeof(BulletEntity).Name,out GameObject prefab);
-        BulletEntity bul=GameObject.Instantiate(prefab).GetComponent<BulletEntity>();
+        con.assets.TryGet_Entity(typeof(BulletEntity).Name, out GameObject prefab);
+        BulletEntity bul = GameObject.Instantiate(prefab).GetComponent<BulletEntity>();
         bul.SetPos(pos);
-        bul.typeID=typeID;
-        bul.id=iDService.bulletIDRecord++;
-        bul.ally=ally;
-        bul.moveSpeed=tm.moveSpeed;
-        bul.lethality=tm.lethality;
-        bul.size=tm.size;
-        bul.shapType=tm.shapType;
-        bul.sr.sprite=tm.sprite;
+        bul.typeID = typeID;
+        bul.id = iDService.bulletIDRecord++;
+        bul.ally = ally;
+        bul.isDead = false;
+        bul.moveSpeed = tm.moveSpeed;
+        bul.lethality = tm.lethality;
+        bul.size = tm.size;
+        bul.shapType = tm.shapType;
+        bul.sr.sprite = tm.sprite;
+        bul.radius = tm.radius;
         return bul;
     }
     public static LevelEntity CreateLevel(GameContext con, int levelID, Difficulty difficulty, ChallengeMode challengeMode) {
@@ -107,10 +112,10 @@ public static class GameFactory {
         con.assets.TryGet_Entity(typeof(LevelEntity).Name, out GameObject prefab);
         LevelEntity level = GameObject.Instantiate(prefab).GetComponent<LevelEntity>();
         // LevelEntity level = new LevelEntity();
-        level.id=con.iDService.levelIDRecord++;
+        level.id = con.iDService.levelIDRecord++;
         level.map.sprite = tm.map;
         LevelMode[] levelModes = tm.levelModes;
-        LevelMode mode =default;
+        LevelMode mode = default;
         foreach (var levelMode in levelModes) {
             if (levelMode.challengeMode == challengeMode) {
                 if (levelMode.difficulty == difficulty) {
@@ -129,7 +134,7 @@ public static class GameFactory {
         foreach (var spTM in spawnerTMs) {
             Spawner spawner = new Spawner();
             spawner.ally = Ally.Monster;
-            spawner.SpawerPos=spTM.SpawerPos;
+            spawner.SpawerPos = spTM.SpawerPos;
             spawner.roleTypeID = spTM.roleTypeID;
             spawner.rolePath = level.path;
             spawner.roleCount = spTM.roleCount;

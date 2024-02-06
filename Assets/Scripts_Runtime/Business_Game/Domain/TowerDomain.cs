@@ -13,7 +13,6 @@ public static class TowerDomain {
             if (!spawner.isSpawn) {
                 return;
             }
-            Debug.Log("inin");
             spawner.cd -= dt;
             if (spawner.cd > 0) {
                 return;

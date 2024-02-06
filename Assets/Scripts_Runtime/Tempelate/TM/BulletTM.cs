@@ -6,6 +6,10 @@ public class BulletTM : ScriptableObject {
     public ShapType shapType;
     public float moveSpeed;
     public Sprite sprite;
+    // 杀伤力
     public int lethality;
+    // 攻击范围
+    public float radius;
+
 
 }

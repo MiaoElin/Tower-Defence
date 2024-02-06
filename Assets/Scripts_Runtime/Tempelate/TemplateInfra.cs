@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using System.Collections.Generic;
-// using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.AsyncOperations;
 // using System.Threading.Tasks;
 public static class TempelateInfra {
     public static void LoadAll(TempelateContext tempCon) {

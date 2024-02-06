@@ -14,6 +14,7 @@ public class BulletEntity : MonoBehaviour {
     public float radius;
     public int lethality;
     public Vector2 []path;
+    public bool isDead;
     public BulletEntity() {
 
     }

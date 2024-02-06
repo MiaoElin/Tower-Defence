@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.elin.elinbinary": {
+      "version": "ssh://git@github.com/MiaoElin/ElinBinary.git?path=Assets",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "6c3968e41b029848d80cfed722c05cc8232da399"
+    },
     "com.unity.2d.animation": {
       "version": "10.0.3",
       "depth": 1,
@@ -178,6 +185,15 @@
       "depth": 2,
       "source": "registry",
       "dependencies": {},
+      "url": "https://packages.unity.cn"
+    },
+    "com.unity.recorder": {
+      "version": "5.0.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.timeline": "1.0.0"
+      },
       "url": "https://packages.unity.cn"
     },
     "com.unity.scriptablebuildpipeline": {

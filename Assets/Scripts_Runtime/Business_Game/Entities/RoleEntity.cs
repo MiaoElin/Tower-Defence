@@ -3,6 +3,8 @@ public class RoleEntity : MonoBehaviour {
     public int id;
     public int typeID;
     public Ally ally;
+    public Vector2 size;
+    public int hp;
     public SpriteRenderer sr;
     public float moveSpeed;
     // ===path===
@@ -18,8 +20,9 @@ public class RoleEntity : MonoBehaviour {
     // public void Init(Sprite spr) {
     //     sr.sprite = spr;
     // }
-    public RoleEntity (){
-        skillModelComponent=new SkillModelComponent ();
+    public bool isDead;
+    public RoleEntity() {
+        skillModelComponent = new SkillModelComponent();
     }
     public void SetPos(Vector2 pos) {
         transform.position = pos;

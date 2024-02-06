@@ -11,11 +11,25 @@ public static class BulletDomain {
         if (has) {
             bul.LookAt(nearlyEnemy.transform.position);
             Vector2 dir = nearlyEnemy.transform.position - bul.transform.position;
-            if (dir.sqrMagnitude <= 0.01f) {
-                return;
-            }
-            bul.Move(dir, dt);
+            // if (dir.sqrMagnitude <= 0.01f) {
+            //     return;
+            // }
+            bul.Move(dir.normalized, dt);
+            Remove(con,bul, nearlyEnemy);
         }
 
+    }
+    public static void Remove(GameContext con, BulletEntity bul, RoleEntity role) {
+        if (IntersectHelper.IscircleIntersect(bul.transform.position, bul.size.x, role.transform.position, role.size.x)) {
+            role.hp -= bul.lethality;
+            if (role.hp <= 0) {
+                role.isDead = true;
+                con.roleRepo.Remove(role);
+                role.TearDown();
+            }
+            bul.isDead = true;
+            con.bulletRepo.Remove(bul);
+            bul.TearDown();
+        }
     }
 }

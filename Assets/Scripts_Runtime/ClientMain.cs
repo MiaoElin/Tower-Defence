@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ElinBinary;
 
 public class ClientMain : MonoBehaviour {
     // Start is called before the first frame update
@@ -11,6 +12,8 @@ public class ClientMain : MonoBehaviour {
     // Canvas canvas; //在ClientMain下直接挂了Canvas就不用声明了,但是也要拖拽绑定，或者getcomponent
     // AssetsContext assetsContext;//不在ClientMain下挂的话，Getcomponent是拿不到东西的
     void Start() {
+        BinaryWriter.WriteInt();
+
         Debug.Log("hello world");
         // 设置帧率
         Application.targetFrameRate = 120;

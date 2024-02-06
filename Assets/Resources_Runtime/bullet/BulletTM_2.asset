@@ -17,4 +17,5 @@ MonoBehaviour:
   shapType: 1
   moveSpeed: 100
   sprite: {fileID: 21300000, guid: 749b9b1c156e2a044abd62580b0453f9, type: 3}
-  lethality: 10
+  lethality: 5
+  radius: 10
