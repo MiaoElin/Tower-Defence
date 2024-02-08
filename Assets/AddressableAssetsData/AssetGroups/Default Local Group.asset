@@ -119,6 +119,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - SkillLevelTM
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 214e7933e6aacde48b7245a3eecbbb22
+    m_Address: Assets/Resources_Runtime/Panel/Panel_HP_Element.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Panels
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 99c48106b7df5c24082eec72495addf8, type: 2}
   m_SchemaSet:

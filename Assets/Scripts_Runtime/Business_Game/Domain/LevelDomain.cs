@@ -28,9 +28,7 @@ public static class LevelDomain {
             spawner.timer = spawner.interval;
 
             RoleEntity role = RoleDomain.SpawnRole(con, spawner.roleTypeID, Ally.Monster, spawner.SpawerPos);
-            Debug.Log(spawner.SpawerPos);
             level.allMonsterID.Add(role.id);
-            Debug.Log(level.allMonsterID.Count);
             role.path = level.path;
             if (level.allMonsterID.Count == spawner.roleCount) {
                 spawner.isSpawn = false;

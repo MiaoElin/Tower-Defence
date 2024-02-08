@@ -15,7 +15,7 @@ MonoBehaviour:
   typeID: 2
   size: {x: 0.5, y: 0.5}
   shapType: 1
-  moveSpeed: 100
+  moveSpeed: 10
   sprite: {fileID: 21300000, guid: 749b9b1c156e2a044abd62580b0453f9, type: 3}
   lethality: 5
-  radius: 10
+  radius: 5

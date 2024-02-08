@@ -54,7 +54,8 @@ public static class GameFactory {
         role.ally = ally;
         role.isDead = false;
         role.size = tm.size;
-        role.hp = tm.hp;
+        role.hp = tm.hpmax;
+        role.hpmax=tm.hpmax;
         role.id = iDService.roleIDRecord++;
         role.SetPos(pos);
         role.isMoving = true;

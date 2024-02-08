@@ -1,7 +1,7 @@
 using UnityEngine;
 public static class RoleDomain {
     public static RoleEntity SpawnRole(GameContext con, int typeID, Ally ally, Vector2 pos) {
-        RoleEntity role = GameFactory.CreateRole(con, con.iDService, typeID, ally, pos);
+        RoleEntity role = GameFactory.CreateRole(con, con.iDService, typeID, ally, pos);                                                           
         con.roleRepo.Add(role);
         return role;
     }
@@ -31,14 +31,14 @@ public static class RoleDomain {
         bool isMelee = con.roleRepo.FindNearlyEnemy(role.transform.position, role.ally, role.meleeRadius, out RoleEntity nearEnemy);
         // Debug.Log(role.meleeRadius);
         if (isShoot) {
-            Debug.Log("shoot");
+            // Debug.Log("shoot");
             role.isShoot = true;
             role.isMelee = false;
             nearlyEnemy = near;
             return;
         }
         if (isMelee) {
-            Debug.Log("melee");
+            // Debug.Log("melee");
             role.isMelee = true;
             role.isShoot = false;
             nearlyEnemy = nearEnemy;
@@ -50,9 +50,9 @@ public static class RoleDomain {
         return;
     }
     public static void TryShootBul(GameContext con, RoleEntity role, float dt) {
-        Debug.Log(role.shootRadius);
-        Debug.Log(role.meleeRadius);
-        Debug.Log(role.typeID);
+        // Debug.Log(role.shootRadius);
+        // Debug.Log(role.meleeRadius);
+        // Debug.Log(role.typeID);
         IsMelee(con, role, out RoleEntity nearlyEnemy);
         role.skillModelComponent.Foreach((SkillModel skill) => {
             skill.cd -= dt;
@@ -73,7 +73,6 @@ public static class RoleDomain {
             if (skill.skillType == SkillType.Melee) {
                 if (role.isMelee) {
                     // todo 近战攻击
-                    Debug.Log("不动");
                     role.isMoving = false;
                     nearlyEnemy.isMoving = false;
                 }
@@ -84,9 +83,6 @@ public static class RoleDomain {
                     BulletDomain.SpawnBullet(con, skill.bulTypeID, role.transform.position, role.ally);
                 }
             }
-
-
-
         });
     }
 

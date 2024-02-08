@@ -62,10 +62,10 @@ public static class Gamecontroller {
         int roleLen = con.roleRepo.TakeAll(out RoleEntity[] all_role);
         for (int i = 0; i < roleLen; i++) {
             var role = all_role[i];
+            role.SetHp();
             RoleDomain.Move(con, role, dt);
             RoleDomain.TryShootBul(con, role, dt);
         }
-        Debug.Log("bullet has:" + con.tempCon.bulletTMs.Count);
         // 移动子弹
         int bulLen = con.bulletRepo.TakeAll(out BulletEntity[] all_bul);
         for (int i = 0; i < bulLen; i++) {
