@@ -39,12 +39,15 @@ public static class LevelDomain {
     public static void SpawnSite(GameContext con) {
         LevelEntity level = con.TryGetLevel();
         Vector2[] sitePos = level.sitesPos;
-        if (level.sitePosCount > sitePos.Length) {
+        if (level.sitePosCount >=sitePos.Length) {
+            Debug.Log(sitePos.Length);
             return;
         }
         foreach (var site in sitePos) {
             TowerDomain.SpawnTower(con, 0, site, Ally.Player);
             level.sitePosCount += 1;
+            Debug.Log(level.sitePosCount);
+
         }
     }
     public static void SpawnHome(GameContext con) {

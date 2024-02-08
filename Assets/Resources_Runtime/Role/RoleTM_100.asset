@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RoleTM_100
   m_EditorClassIdentifier: 
   typeID: 100
-  hpmax: 20
+  hpmax: 30
   sprite: {fileID: 21300000, guid: 1001816ac5c58d44c98b01414d52e929, type: 3}
   size: {x: 0.5, y: 0.5}
   moveSpeed: 1
