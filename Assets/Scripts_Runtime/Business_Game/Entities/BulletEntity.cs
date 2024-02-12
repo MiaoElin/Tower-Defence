@@ -15,6 +15,7 @@ public class BulletEntity : MonoBehaviour {
     public int lethality;
     public Vector2 []path;
     public bool isDead;
+    public Vector2 lastDir;
     public BulletEntity() {
 
     }

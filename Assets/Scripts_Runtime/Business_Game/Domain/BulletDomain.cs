@@ -14,10 +14,11 @@ public static class BulletDomain {
             // if (dir.sqrMagnitude <= 0.01f) {
             //     return;
             // }
+            bul.lastDir=dir;
             bul.Move(dir.normalized, dt);
             Remove(con,bul, nearlyEnemy);
         }
-
+        bul.Move(bul.lastDir.normalized,dt);
     }
     public static void Remove(GameContext con, BulletEntity bul, RoleEntity role) {
         if (IntersectHelper.IscircleIntersect(bul.transform.position, bul.size.x, role.transform.position, role.size.x)) {

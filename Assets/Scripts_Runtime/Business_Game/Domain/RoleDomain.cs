@@ -30,7 +30,7 @@ public static class RoleDomain {
         // Debug.Log(role.shootRadius);
         bool isMelee = con.roleRepo.FindNearlyEnemy(role.transform.position, role.ally, role.meleeRadius, out RoleEntity nearEnemy);
         // Debug.Log(role.meleeRadius);
-        if (isShoot) {
+        if (isShoot&&!isMelee) {
             // Debug.Log("shoot");
             role.isShoot = true;
             role.isMelee = false;
