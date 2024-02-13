@@ -13,9 +13,11 @@ public class panel_BuildTower_Element : MonoBehaviour {
     //         OnClickHandle.Invoke(towerTypeID,towerSkillLevel);
     //     });
     // }
-    public void Ctor(int towerTypeID,int price,Sprite sprite){
-        this.towerTypeID=towerTypeID;
-        this.price.text=price.ToString();
-        this.icon.sprite=sprite;
+    public void Ctor(int towerTypeID, int price, Sprite sprite) {
+        this.towerTypeID = towerTypeID;
+        if (towerTypeID != 0) {
+            this.price.text = price.ToString();
+            this.icon.sprite = sprite;
+        }
     }
 }
