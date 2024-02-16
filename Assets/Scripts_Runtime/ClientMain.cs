@@ -51,7 +51,7 @@ public class ClientMain : MonoBehaviour {
         };
 
         uIEventCenter.BuildTower += (int newTypeID, int thisTowerEntityID, Vector2 towerPos) => {
-            Debug.Log(newTypeID);
+            // Debug.Log(newTypeID);
             TowerDomain.SpawnTower(con.gameCon, newTypeID, towerPos,Ally.Player);
             con.gameCon.towerRepo.TryGet(thisTowerEntityID,out TowerEntity tower);
             con.gameCon.towerRepo.Remove(tower);

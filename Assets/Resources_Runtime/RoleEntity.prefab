@@ -51,7 +51,9 @@ MonoBehaviour:
   ally: 0
   size: {x: 0, y: 0}
   hp: 0
+  hpmax: 0
   hpImage: {fileID: 7248315115440772787}
+  hpMaxImage: {fileID: 2487447524243416193}
   sr: {fileID: 6406635952759535254}
   moveSpeed: 0
   isMoving: 0

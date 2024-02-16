@@ -8,6 +8,7 @@ public class RoleEntity : MonoBehaviour {
     public int hp;
     public int hpmax;
     public Image hpImage;
+    public Image hpMaxImage;
     public SpriteRenderer sr;
     public float moveSpeed;
     // ===path===
@@ -35,6 +36,7 @@ public class RoleEntity : MonoBehaviour {
     }
     public void SetHp(){
         hpImage.GetComponent<RectTransform>().sizeDelta=new Vector2 (hp*0.7f/hpmax,0.1f);
+        hpMaxImage.GetComponent<RectTransform>().sizeDelta=new Vector2 (hpmax*0.7f/hpmax,0.1f);
     }
     public void Move(Vector2 dir, float dt) {
         Vector2 pos = transform.position;

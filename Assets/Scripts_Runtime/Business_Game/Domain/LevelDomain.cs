@@ -40,7 +40,6 @@ public static class LevelDomain {
         LevelEntity level = con.TryGetLevel();
         Vector2[] sitePos = level.sitesPos;
         if (level.sitePosCount >=sitePos.Length) {
-            Debug.Log(sitePos.Length);
             return;
         }
         foreach (var site in sitePos) {
