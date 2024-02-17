@@ -14,7 +14,12 @@ public static class RoleDomain {
         if (role.path == null || !role.isMoving) {
             return;
         }
+        // 到达终点
         if (role.pathIndex == role.path.Length) {
+            if(role.ally==Ally.Monster){
+                role.isDead=true;
+                con.playerEntity.hp-=1;
+            }
             return;
         }
         Vector2 target = role.path[role.pathIndex];

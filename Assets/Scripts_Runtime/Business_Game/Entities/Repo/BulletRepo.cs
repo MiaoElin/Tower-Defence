@@ -1,23 +1,31 @@
 using System.Collections.Generic;
-public class BulletRepo{
-    Dictionary<int,BulletEntity>all;
-    BulletEntity[]tempArray;
-    public BulletRepo(){
-        all=new Dictionary<int, BulletEntity> ();
-        tempArray=new BulletEntity[1000];
+public class BulletRepo {
+    Dictionary<int, BulletEntity> all;
+    BulletEntity[] tempArray;
+    public BulletRepo() {
+        all = new Dictionary<int, BulletEntity>();
+        tempArray = new BulletEntity[1000];
     }
-    public void Add(BulletEntity bullet){
-        all.Add(bullet.id,bullet);
+    public void Add(BulletEntity bullet) {
+        all.Add(bullet.id, bullet);
     }
-    public void Remove(BulletEntity bullet){
-        all.Remove(bullet.id);
-    }
-    public int TakeAll(out BulletEntity []all_bullets){
-        if(all.Count>tempArray.Length){
-            tempArray=new BulletEntity [all.Count*2];
+    public void Remove() {
+        int bulLen = TakeAll(out BulletEntity[] all_buls);
+        for (int i = 0; i < bulLen; i++) {
+            var bul = all_buls[i];
+            if (bul.isDead) {
+                all.Remove(bul.id);
+                bul.TearDown();
+            }
         }
-        all.Values.CopyTo(tempArray,0);
-        all_bullets=tempArray;
+
+    }
+    public int TakeAll(out BulletEntity[] all_bullets) {
+        if (all.Count > tempArray.Length) {
+            tempArray = new BulletEntity[all.Count * 2];
+        }
+        all.Values.CopyTo(tempArray, 0);
+        all_bullets = tempArray;
         return all.Count;
     }
 }

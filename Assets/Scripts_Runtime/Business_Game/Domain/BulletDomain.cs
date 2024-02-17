@@ -16,21 +16,17 @@ public static class BulletDomain {
             // }
             bul.lastDir=dir;
             bul.Move(dir.normalized, dt);
-            Remove(con,bul, nearlyEnemy);
+            IsBulDead(con,bul, nearlyEnemy);
         }
         bul.Move(bul.lastDir.normalized,dt);
     }
-    public static void Remove(GameContext con, BulletEntity bul, RoleEntity role) {
+    public static void IsBulDead(GameContext con, BulletEntity bul, RoleEntity role) {
         if (IntersectHelper.IscircleIntersect(bul.transform.position, bul.size.x, role.transform.position, role.size.x)) {
             role.hp -= bul.lethality;
             if (role.hp <= 0) {
                 role.isDead = true;
-                con.roleRepo.Remove(role);
-                role.TearDown();
             }
             bul.isDead = true;
-            con.bulletRepo.Remove(bul);
-            bul.TearDown();
         }
     }
 }

@@ -14,7 +14,7 @@ public static class Gamecontroller {
         // 生成我方基地
         // 玩家初始化
         PlayerEntity player = con.playerEntity;
-        player.Init(5);
+        player.Init(level.playerHp);
         // 打开Panel_Heart
         UIApp.P_Heart_Open(con.uicon, player.hp);
         game.status = GameStatus.Ingame;
@@ -72,6 +72,10 @@ public static class Gamecontroller {
             var bul = all_bul[i];
             BulletDomain.Move(con, dt, bul);
         }
+        // role死亡移除
+        con.roleRepo.Remove();
+        // 子弹死亡移除
+        con.bulletRepo.Remove();
 
     }
     public static void Fixed_Tick() {

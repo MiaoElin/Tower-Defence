@@ -10,8 +10,16 @@ public class RoleRepo {
     public void Add(RoleEntity role) {
         all.Add(role.id, role);
     }
-    public void Remove(RoleEntity role) {
-        all.Remove(role.id);
+    public void Remove() {
+        int roleLen=TakeAll(out RoleEntity []all_role);
+        for(int i=0;i<roleLen;i++){
+            var role=all_role[i];
+            if(role.isDead){
+                all.Remove(role.id);
+                role.TearDown();
+            }
+        }
+        
     }
     public void Remove(int roleID) {
         all.Remove(roleID);
