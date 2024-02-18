@@ -77,6 +77,7 @@ public static class UIApp {
         Panel_BuildTower panel = con.panel_BuildTower;
         if (panel != null) {
             GameObject.Destroy(panel.gameObject); //现在panel==null
+            con.panel_BuildTower =null;
             // con.panel_BuildTower = null;
             // Debug.Log(Time.frameCount);
         }
