@@ -7,6 +7,7 @@ public static class UserInterfaceDomain {
             var tower = all_Tower[i];
             if (PFPhysics.IsPointInsideRect(con.input.worldMousePos, tower.transform.position, tower.size)) {
                 if (con.input.isLeftMouseDown) {
+                    con.input.isLeftMouseDown=false;
                     UIApp.Panel_BuildTower_Close(con.uicon);
                     UIApp.P_BuildTower_Open(con.uicon, tower.id, tower.transform.position, tower.allowBuildTypeIDs);
                     break;
