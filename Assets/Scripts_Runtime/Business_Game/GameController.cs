@@ -39,12 +39,7 @@ public static class Gamecontroller {
         // 每帧加载Panel_Heart
         UIApp.P_Heart_Update(con.uicon, con.playerEntity.hp);
         UserInterfaceDomain.PreTick(con);
-        if (con.uicon.panel_BuildTower != null) {
-            if (con.input.isLeftMouseDown) {
-                Debug.Log("inin");
-                UIApp.Panel_BuildTower_Close(con.uicon);
-            }
-        }
+        
         // 获取当前的关卡
         LevelEntity level = con.TryGetLevel();
         // 生成塔位点

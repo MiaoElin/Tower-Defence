@@ -11,6 +11,7 @@ public class UIcontext {
     public Canvas panelCanvas;
     public Canvas gameCanvas;
     public AssetsContext assetsContext;
+    public InputEntity input;
     UIEventCenter uIEventCenter;
     public UIEventCenter UIEventCenter => uIEventCenter;
 
@@ -20,10 +21,11 @@ public class UIcontext {
     public UIcontext() {
         uIEventCenter = new UIEventCenter();
     }
-    public void Inject(Canvas panelCanvas,Canvas gameCanvas, AssetsContext assetsContext,TempelateContext tempelateContext) {
+    public void Inject(Canvas panelCanvas,Canvas gameCanvas, AssetsContext assetsContext,TempelateContext tempelateContext,InputEntity input) {
         this.panelCanvas = panelCanvas;
         this.assetsContext = assetsContext;
         this.gameCanvas=gameCanvas;
         this.tempCon=tempelateContext;
+        this.input=input;
         }
 }

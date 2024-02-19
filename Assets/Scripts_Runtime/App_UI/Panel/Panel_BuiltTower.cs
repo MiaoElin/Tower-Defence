@@ -9,13 +9,16 @@ public class Panel_BuildTower : MonoBehaviour {
     public panel_BuildTower_Element prefab;
     List<panel_BuildTower_Element>elements;
     public Action<int> OnClickBuildTower;
+    public bool isButtonDown;
     public Panel_BuildTower() {
         elements=new List<panel_BuildTower_Element> ();
+        isButtonDown=true;
     }
     public void AddOpition(int towerTypeID,int price,Sprite sprite){
         panel_BuildTower_Element element=GameObject.Instantiate(prefab,groupTransform);
         element.Ctor(towerTypeID,price,sprite);
         element.btn.onClick.AddListener(()=>{
+            // isButtonDown=true;
             OnClickBuildTower.Invoke(element.towerTypeID);
         });
         elements.Add(element);
