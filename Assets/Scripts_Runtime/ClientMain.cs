@@ -56,7 +56,6 @@ public class ClientMain : MonoBehaviour {
             con.gameCon.towerRepo.TryGet(thisTowerEntityID,out TowerEntity tower);
             con.gameCon.towerRepo.Remove(tower);
             GameObject.Destroy(tower.gameObject);
-
             UIApp.Panel_BuildTower_Close(con.uIcon);
         };
     }
@@ -74,5 +73,8 @@ public class ClientMain : MonoBehaviour {
         // Vector2 screenPos = Camera.main.WorldToScreenPoint(mouseWorldPos);
         // Debug.Log(mouseWorldPos);
 
+    }
+    void OnGUI(){
+        
     }
 }

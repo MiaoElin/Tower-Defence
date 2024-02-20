@@ -38,8 +38,9 @@ public static class Gamecontroller {
         // 生成tower
         // 每帧加载Panel_Heart
         UIApp.P_Heart_Update(con.uicon, con.playerEntity.hp);
+
         UserInterfaceDomain.PreTick(con);
-        
+
         // 获取当前的关卡
         LevelEntity level = con.TryGetLevel();
         // 生成塔位点

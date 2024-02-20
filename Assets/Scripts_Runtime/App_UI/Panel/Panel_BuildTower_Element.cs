@@ -7,6 +7,8 @@ public class panel_BuildTower_Element : MonoBehaviour {
     public Text price;
     public Image icon;
     public Button btn;
+    public Vector2 size;
+    public bool isButtonDown;
     // public Action<int,int> OnClickHandle;
     // public void Ctor(){
     //     btn.onClick.AddListener(()=>{

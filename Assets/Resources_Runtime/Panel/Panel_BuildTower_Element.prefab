@@ -144,6 +144,7 @@ MonoBehaviour:
   price: {fileID: 6988465623677807286}
   icon: {fileID: 8832976646534919818}
   btn: {fileID: 1665494130944831939}
+  size: {x: 1, y: 1}
 --- !u!114 &4312459978505258278
 MonoBehaviour:
   m_ObjectHideFlags: 0

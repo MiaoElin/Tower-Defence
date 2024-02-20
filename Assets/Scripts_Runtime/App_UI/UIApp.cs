@@ -70,7 +70,7 @@ public static class UIApp {
             }
             panel.transform.position = thisTowerPos;
             panel.OnClickBuildTower = (int toBuildTowerTypeID) => {
-                panel.isButtonDown = false;
+                con.input.isLeftMouseDown=false;
                 Debug.Log("build");
                 con.UIEventCenter.OnClick_BuildTower(toBuildTowerTypeID, thisTowerEntityID, thisTowerPos);
             };
